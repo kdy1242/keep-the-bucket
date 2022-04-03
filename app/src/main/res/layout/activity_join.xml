@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Join">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/icon_arrow_black" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="회원가입"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="55dp"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:layout_marginLeft="17dp"-->
+<!--        android:text="이메일을 입력 후"-->
+<!--        android:textSize="22sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:fontFamily="@font/notosanskr_regular" />-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:orientation="horizontal">-->
+<!--        <TextView-->
+<!--            android:layout_width="41dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:layout_marginLeft="19dp"-->
+<!--            android:text="메일에서"-->
+<!--            android:textSize="22sp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:fontFamily="@font/notosanskr_regular"-->
+<!--/>-->
+<!--        <TextView-->
+<!--            android:layout_width="39dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="left|center_horizontal"-->
+<!--            android:layout_weight="1"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:text="인증번호"-->
+<!--            android:textSize="22sp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:fontFamily="@font/notosanskr_bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="1sp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:fontFamily="@font/notosanskr_regular"-->
+<!--            android:gravity="left|center_horizontal"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:text="를"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="22sp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:fontFamily="@font/notosanskr_regular"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:text="확인해주세요"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="22sp" />-->
+<!--    </LinearLayout>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="메일에서 인증번호를 입력해주세요"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanskr_regular"
+        android:layout_marginLeft="17dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        android:text="이메일 입력"
+        android:textSize="15sp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textColor="@color/black"/>
+    <EditText
+        android:layout_width="376dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:hint="이메일 주소"
+        android:paddingLeft="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/login_btn_round"
+        android:fontFamily="@font/notosanskr_regular"/>
+    <EditText
+        android:layout_width="376dp"
+        android:layout_height="70dp"
+        android:textSize="20sp"
+        android:hint="패스워드"
+        android:inputType="textPassword"
+        android:layout_gravity="center"
+        android:paddingLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_btn_round"
+        android:fontFamily="@font/notosanskr_regular"/>
+    <Button
+        android:layout_width="376dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/login_btn_round"
+        android:text="인증번호 보내기"
+        android:fontFamily="@font/notosanskr_bold"
+        android:textSize="20sp"
+        android:textColor="#CCCACA"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        android:text="이메일 입력"
+        android:textSize="15sp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textColor="@color/black"/>
+    <LinearLayout
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="240dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="17dp"
+            android:hint="6자리를 입력해주세요"
+            android:paddingLeft="25dp"
+            android:background="@drawable/login_btn_round"
+            android:fontFamily="@font/notosanskr_regular"/>
+        <EditText
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_weight="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"
+            android:hint="확인"
+            android:paddingLeft="25dp"
+            android:background="@drawable/login_btn_round"
+            android:fontFamily="@font/notosanskr_regular"/>
+    </LinearLayout>
+
+</LinearLayout>
