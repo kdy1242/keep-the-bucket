@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@color/white"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_back_btn"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="47dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:text="@string/consent_bold"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="16dp">
+        <TextView
+            android:layout_width="328dp"
+            android:layout_height="48dp"
+            android:background="@drawable/conset_solid"
+            android:elevation="100dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:paddingLeft="56dp"
+            android:text="전체동의"
+            android:textColor="#707070"
+            android:textSize="16sp" />
+        <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_check_btn"/>
+    </FrameLayout>
+</LinearLayout>
