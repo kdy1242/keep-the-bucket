@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Profile"></activity>
-        <!-- <activity -->
+        <activity android:name=".Home"></activity>
+        <activity android:name=".Profile" /> <!-- <activity -->
         <!-- android:name=".Join" -->
         <!-- android:exported="false" /> -->
         <activity
