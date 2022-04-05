@@ -21,7 +21,7 @@
                 android:fontFamily="@font/notosanskr_bold"
                 android:text="마이페이지"
                 android:textColor="@color/white"
-                android:textSize="23sp" />
+                android:textSize="22sp" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -164,10 +164,10 @@
                 android:layout_marginRight="50px">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="140px"
+                    android:layout_height="wrap_content"
                     android:text="계정 관리"
                     android:fontFamily="@font/notosanskr_light"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -190,10 +190,10 @@
                 android:layout_marginRight="50px">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="140px"
+                    android:layout_height="wrap_content"
                     android:text="테마 편집"
                     android:fontFamily="@font/notosanskr_light"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -216,10 +216,10 @@
                 android:layout_marginRight="50px">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="140px"
+                    android:layout_height="wrap_content"
                     android:text="임시 저장 내역"
                     android:fontFamily="@font/notosanskr_light"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -242,10 +242,10 @@
                 android:layout_marginRight="50px">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="140px"
+                    android:layout_height="wrap_content"
                     android:text="푸시 알림 설정"
                     android:fontFamily="@font/notosanskr_light"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -268,10 +268,10 @@
                 android:layout_marginRight="50px">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="140px"
+                    android:layout_height="wrap_content"
                     android:text="이용 안내"
                     android:fontFamily="@font/notosanskr_light"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -294,10 +294,10 @@
                 android:layout_marginRight="50px">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="140px"
+                    android:layout_height="wrap_content"
                     android:text="버전 정보"
                     android:fontFamily="@font/notosanskr_light"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
