@@ -1,9 +1,465 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:fontFamily="@font/roboto_bold"
+            android:text="BUCKET LIST"
+            android:textColor="@color/main_orange"
+            android:textSize="20sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_marginRight="60px"
+            android:src="@drawable/ic_search_btn"
+            android:tint="@color/main_orange"/>
+        <ImageView
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_marginRight="50px"
+            android:src="@drawable/ic_notice_btn"
+            android:tint="@color/main_orange"/>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_marginBottom="20px">
+
+                <LinearLayout
+                    android:id="@+id/home_tab_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px">
+
+                    <TextView
+                        android:id="@+id/home_tab_home_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="홈"
+                        android:textColor="@color/main_orange"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:id="@+id/home_tab_home_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="5px"
+                        android:background="@color/main_orange"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/home_tab_mylist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px">
+
+                    <TextView
+                        android:id="@+id/home_tab_mylist_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="내 리스트"
+                        android:textColor="#A0A0A0"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:id="@+id/home_tab_mylist_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="5px"
+                        android:background="@color/main_orange"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/home_tab_sharelist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px">
+
+                    <TextView
+                        android:id="@+id/home_tab_sharelist_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="공유 리스트"
+                        android:textColor="#A0A0A0"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:id="@+id/home_tab_sharelist_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="5px"
+                        android:background="@color/main_orange"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ViewFlipper
+                android:id="@+id/home_viewflipper"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="280px"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginTop="30px"
+                        android:layout_marginRight="50px"
+                        android:background="@drawable/round_orange"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40px"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25sp"
+                                android:fontFamily="@font/notosanskr_light"
+                                android:text="오늘 도전할 버킷리스트는?"
+                                android:textColor="#4C4C4C"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="48sp"
+                                android:fontFamily="@font/notosanskr_bold"
+                                android:text="버킷리스트"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="80px"
+                            android:layout_height="80px"
+                            android:layout_marginRight="40px"
+                            android:background="#9FFFFF"
+                            android:src="@drawable/ic_arrow_btn"
+                            android:tint="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginTop="60px"
+                        android:layout_marginRight="50px"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="나의 버킷리스트"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="모두보기"
+                            android:textColor="#A0A0A0"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:layout_width="28px"
+                            android:layout_height="28px"
+                            android:layout_marginLeft="6px"
+                            android:src="@drawable/ic_arrow_btn"
+                            android:tint="#A0A0A0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:background="@drawable/round_border"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <CheckBox
+                            android:id="@+id/home_mylist_check1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트1"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/home_mylist_check2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트2"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/home_mylist_check3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트3"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="내 리스트" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="공유 리스트" />
+                </LinearLayout>
+            </ViewFlipper>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px"
+                android:layout_marginTop="60px"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="친구의 버킷리스트"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="600px"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_border_gray"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="10px">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="100px"
+                                android:layout_height="100px"
+                                android:src="@drawable/ic_launcher_background" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20px"
+                                android:fontFamily="@font/notosanskr_bold"
+                                android:text="닉네임"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/home_friend1_check1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트1"
+                            android:textColor="@color/black" />
+                        <CheckBox
+                            android:id="@+id/home_friend1_check2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트2"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="600px"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:background="@drawable/round_border_gray"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="10px">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="100px"
+                                android:layout_height="100px"
+                                android:src="@drawable/ic_launcher_background" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20px"
+                                android:fontFamily="@font/notosanskr_bold"
+                                android:text="닉네임"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/home_friend2_check1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트1"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/home_friend2_check2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/main_orange"
+                            android:checked="false"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="버킷리스트2"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="230px"
+        android:background="@color/white"
+        android:elevation="10dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@drawable/ic_select_tab_home"
+                android:tint="@color/main_orange"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@drawable/ic_select_tab_users"
+                android:tint="#B8B8B8"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@drawable/ic_select_tab_bucket"
+                android:tint="#B8B8B8"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab_setting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@drawable/ic_select_tab_setting"
+                android:tint="#B8B8B8"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
