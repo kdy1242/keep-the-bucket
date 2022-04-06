@@ -9,7 +9,5 @@ class Conset : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_consent)
 
-        var checkBtn : CheckBox = findViewById(R.id.checkbox);
-        checkBtn.bringToFront();
     }
 }

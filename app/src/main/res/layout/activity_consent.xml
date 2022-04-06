@@ -20,27 +20,97 @@
         android:text="@string/consent_bold"
         android:textColor="@color/black"
         android:textSize="20sp" />
-
+    <FrameLayout
+        android:layout_width="328dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/check_box">
+        <CheckBox
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="16dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_box_all"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="56dp"
+            android:text="전체 동의"
+            android:textSize="16sp"
+            android:textColor="#707070"
+            android:fontFamily="@font/notosanskr_bold" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="26dp">
+        <CheckBox
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:button="@null"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/check_box_mini" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:textSize="12sp"
+            android:textColor="#707070"
+            android:text="[필수] 이용약관 (만14세 이상 이용가능)"
+            android:fontFamily="@font/notosanskr_regular"/>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="26dp">
+        <CheckBox
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:button="@null"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/check_box_mini" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:textSize="12sp"
+            android:textColor="#707070"
+            android:text="[필수] 개인정보 수집 및 이용"
+            android:fontFamily="@font/notosanskr_regular"/>
+    </FrameLayout>
     <FrameLayout
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginLeft="16dp">
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="26dp">
+        <CheckBox
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:button="@null"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/check_box_mini" />
         <TextView
-            android:layout_width="328dp"
-            android:layout_height="48dp"
-            android:background="@drawable/conset_solid"
-            android:elevation="100dp"
-            android:fontFamily="@font/notosanskr_bold"
-            android:paddingLeft="56dp"
-            android:text="전체동의"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:textSize="12sp"
             android:textColor="#707070"
-            android:textSize="16sp" />
-        <ImageButton
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/ic_check_btn"/>
+            android:text="[선택] 이벤트 등 프로모션 알림 수신 동의"
+            android:fontFamily="@font/notosanskr_regular"/>
     </FrameLayout>
+    <Button
+        android:layout_width="328dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/login_btn_round"
+        android:text="확인"
+        android:textSize="14sp"
+        android:textColor="#E2E2E2"
+        android:fontFamily="@font/notosanskr_bold"/>
+
 </LinearLayout>
