@@ -32,7 +32,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginLeft="16dp"
             android:button="@null"
-            android:background="@drawable/ic_check_btn"/>
+            android:drawableLeft="@drawable/check_box_all"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
             android:layout_height="16dp"
             android:button="@null"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_check_mini" />
+            android:drawableLeft="@drawable/check_box_mini" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
             android:layout_height="16dp"
             android:button="@null"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_check_mini"/>
+            android:drawableLeft="@drawable/check_box_mini" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
             android:layout_height="16dp"
             android:button="@null"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_check_mini" />
+            android:drawableLeft="@drawable/check_box_mini" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
