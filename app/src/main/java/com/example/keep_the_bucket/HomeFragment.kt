@@ -7,12 +7,10 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.ViewFlipper
+import android.widget.*
 import androidx.core.content.ContextCompat
 
 
