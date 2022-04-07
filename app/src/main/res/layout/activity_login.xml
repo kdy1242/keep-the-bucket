@@ -99,10 +99,12 @@
             android:textColor="#605F5F" />
     </LinearLayout>
     <Button
+        android:id="@+id/btn"
         android:layout_width="328dp"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="43dp"
+        android:onClick="onClick"
         android:background="@drawable/login_btn_round"
         android:text="로그인"
         android:textSize="14sp"
@@ -130,7 +132,7 @@
             android:textSize="16sp"
             android:gravity="right|center_horizontal"
             android:layout_marginRight="5.4sp"
-            android:textColor="#DDDDDD"
+            android:textColor="#EEEEEE"
             android:background="@drawable/background_transparent"/>
         <Button
             android:layout_width="wrap_content"
@@ -146,7 +148,7 @@
             android:layout_weight="1"
             android:text="|"
             android:textSize="16sp"
-            android:textColor="#DDDDDD"
+            android:textColor="#EEEEEE"
             android:gravity="left|center_horizontal"
             android:layout_marginLeft="5.4sp"
             android:background="@drawable/background_transparent"/>
