@@ -1,6 +1,7 @@
 package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Color.parseColor
 import android.os.Bundle
@@ -42,6 +43,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val friend1check2 :CheckBox = view.findViewById(R.id.home_friend1_check2)
         val friend2check1 :CheckBox = view.findViewById(R.id.home_friend2_check1)
         val friend2check2 :CheckBox = view.findViewById(R.id.home_friend2_check2)
+        val homesearchimg :ImageView = view.findViewById(R.id.home_search_img)
 
         hometabhome.setOnClickListener(){
             hometabhometext.setTextColor(Color.parseColor("#F8BAA0"))
@@ -113,6 +115,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }else{
                 friend2check2.setTextColor(Color.BLACK)
             }
+        }
+
+        homesearchimg.setOnClickListener(){
+            val intent = Intent(activity, SearchUserActivity::class.java)
+            startActivity(intent)
         }
 
         return view
