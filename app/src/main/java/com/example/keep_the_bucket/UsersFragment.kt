@@ -1,11 +1,13 @@
 package com.example.keep_the_bucket
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.ViewFlipper
@@ -31,6 +33,7 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
         val userstaballview :View = view.findViewById(R.id.users_tab_all_view)
         val usertabshareview :View = view.findViewById(R.id.users_tab_share_view)
         val viewFlipper : ViewFlipper = view.findViewById(R.id.users_viewflipper)
+        val userssearchimg : ImageView = view.findViewById(R.id.users_search_img)
 
         userstaball.setOnClickListener(){
             userstaballtext.setTextColor(Color.parseColor("#F8BAA0"))
@@ -46,6 +49,11 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
             userstaballview.visibility = View.INVISIBLE
             usertabshareview.visibility = View.VISIBLE
             viewFlipper.displayedChild = 1
+        }
+
+        userssearchimg.setOnClickListener(){
+            val intent = Intent(activity, SearchUserActivity::class.java)
+            startActivity(intent)
         }
 
         return view
