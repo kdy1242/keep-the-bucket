@@ -5,18 +5,12 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.Color.parseColor
 import android.os.Bundle
-import android.provider.CalendarContract
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,18 +38,35 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val friend2check1 :CheckBox = view.findViewById(R.id.home_friend2_check1)
         val friend2check2 :CheckBox = view.findViewById(R.id.home_friend2_check2)
         val homesearchimg :ImageView = view.findViewById(R.id.home_search_img)
+        val spinner :Spinner = view.findViewById(R.id.spinner)
+        val morebtn1 :ImageView = view.findViewById(R.id.more_btn1)
+        val morebtn2 :ImageView = view.findViewById(R.id.more_btn2)
+        val morebtn3 :ImageView = view.findViewById(R.id.more_btn3)
+        val morebtn4 :ImageView = view.findViewById(R.id.more_btn4)
+        val morebtn5 :ImageView = view.findViewById(R.id.more_btn5)
+
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.itemList,
+            R.layout.spinner_list
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(R.layout.spinner_list)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
 
         hometabhome.setOnClickListener(){
-            hometabhometext.setTextColor(Color.parseColor("#F8BAA0"))
-            hometabsharelisttext.setTextColor(Color.parseColor("#868686"))
+            hometabhometext.setTextColor(parseColor("#F8BAA0"))
+            hometabsharelisttext.setTextColor(parseColor("#868686"))
             hometabhomeview.visibility = View.VISIBLE
             hometabsharelistview.visibility = View.INVISIBLE
             viewFlipper.displayedChild = 0
         }
 
         hometabsharelist.setOnClickListener(){
-            hometabhometext.setTextColor(Color.parseColor("#868686"))
-            hometabsharelisttext.setTextColor(Color.parseColor("#F8BAA0"))
+            hometabhometext.setTextColor(parseColor("#868686"))
+            hometabsharelisttext.setTextColor(parseColor("#F8BAA0"))
             hometabhomeview.visibility = View.INVISIBLE
             hometabsharelistview.visibility = View.VISIBLE
             viewFlipper.displayedChild = 1
@@ -63,7 +74,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         check1.setOnClickListener(){
             if(check1.isChecked){
-                check1.setTextColor(Color.parseColor("#868686"))
+                check1.setTextColor(parseColor("#868686"))
             }else{
                 check1.setTextColor(Color.BLACK)
             }
@@ -71,7 +82,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         check2.setOnClickListener(){
             if(check2.isChecked){
-                check2.setTextColor(Color.parseColor("#868686"))
+                check2.setTextColor(parseColor("#868686"))
             } else{
                 check2.setTextColor(Color.BLACK)
             }
@@ -79,7 +90,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         check3.setOnClickListener(){
             if(check3.isChecked){
-                check3.setTextColor(Color.parseColor("#868686"))
+                check3.setTextColor(parseColor("#868686"))
             }else{
                 check3.setTextColor(Color.BLACK)
             }
@@ -87,7 +98,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         friend1check1.setOnClickListener(){
             if(friend1check1.isChecked){
-                friend1check1.setTextColor(Color.parseColor("#868686"))
+                friend1check1.setTextColor(parseColor("#868686"))
             }else{
                 friend1check1.setTextColor(Color.BLACK)
             }
@@ -95,7 +106,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         friend1check2.setOnClickListener(){
             if(friend1check2.isChecked){
-                friend1check2.setTextColor(Color.parseColor("#868686"))
+                friend1check2.setTextColor(parseColor("#868686"))
             }else{
                 friend1check2.setTextColor(Color.BLACK)
             }
@@ -103,7 +114,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         friend2check1.setOnClickListener(){
             if(friend2check1.isChecked){
-                friend2check1.setTextColor(Color.parseColor("#868686"))
+                friend2check1.setTextColor(parseColor("#868686"))
             }else{
                 friend2check1.setTextColor(Color.BLACK)
             }
@@ -111,7 +122,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         friend2check2.setOnClickListener(){
             if(friend2check2.isChecked){
-                friend2check2.setTextColor(Color.parseColor("#868686"))
+                friend2check2.setTextColor(parseColor("#868686"))
             }else{
                 friend2check2.setTextColor(Color.BLACK)
             }
@@ -122,6 +133,32 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             startActivity(intent)
         }
 
+        morebtn1.setOnClickListener(){
+            showPopup(morebtn1)
+        }
+
+        morebtn2.setOnClickListener(){
+            showPopup(morebtn2)
+        }
+
+        morebtn3.setOnClickListener(){
+            showPopup(morebtn3)
+        }
+
+        morebtn4.setOnClickListener(){
+            showPopup(morebtn4)
+        }
+
+        morebtn5.setOnClickListener(){
+            showPopup(morebtn5)
+        }
+
         return view
+    }
+    fun showPopup(v: View) {
+        val popup = PopupMenu(requireContext(), v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.popup_menu, popup.menu)
+        popup.show()
     }
 }
