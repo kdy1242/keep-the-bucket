@@ -55,9 +55,9 @@
         app:layout_constraintTop_toBottomOf="@id/top_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_friends" />
 
     <TextView
         android:id="@+id/bingo_txt"
@@ -84,6 +84,7 @@
         android:elevation="1dp" >
 
         <GridLayout
+            android:id="@+id/bucket_grid"
             android:layout_width="318dp"
             android:layout_height="318dp"
             android:orientation="horizontal"
