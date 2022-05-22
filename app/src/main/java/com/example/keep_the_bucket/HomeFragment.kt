@@ -33,6 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val hometabmylistview :View = view.findViewById(R.id.home_tab_mylist_view)
         val hometabsharelistview :View = view.findViewById(R.id.home_tab_sharelist_view)
         val viewFlipper :ViewFlipper = view.findViewById(R.id.home_viewflipper)
+        val homelistviewFlipper :ViewFlipper = view.findViewById(R.id.home_list_viewFlipper)
         val check1 :CheckBox = view.findViewById(R.id.home_mylist_check1)
         val check2 :CheckBox = view.findViewById(R.id.home_mylist_check2)
         val check3 :CheckBox = view.findViewById(R.id.home_mylist_check3)
@@ -46,6 +47,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val morebtn1 :ImageView = view.findViewById(R.id.more_btn1)
         val morebtn2 :ImageView = view.findViewById(R.id.more_btn2)
         val morebtn3 :ImageView = view.findViewById(R.id.more_btn3)
+        val morebtn01 :ImageView = view.findViewById(R.id.more_btn01)
+        val morebtn02 :ImageView = view.findViewById(R.id.more_btn02)
+        val morebtn03 :ImageView = view.findViewById(R.id.more_btn03)
+        val morebtn04 :ImageView = view.findViewById(R.id.more_btn04)
+        val homechooseall :LinearLayout = view.findViewById(R.id.home_choose_all)
+        val homechooseshare :LinearLayout = view.findViewById(R.id.home_choose_share)
+        val homechoosemission :LinearLayout = view.findViewById(R.id.home_choose_mission)
+        val homechoosealltext :TextView = view.findViewById(R.id.home_choose_all_text)
+        val homechoosesharetext :TextView = view.findViewById(R.id.home_choose_share_text)
+        val homechoosemissiontext :TextView = view.findViewById(R.id.home_choose_mission_text)
 
         ArrayAdapter.createFromResource(
             requireContext(),
@@ -97,6 +108,36 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             hometabmylistview.visibility = View.INVISIBLE
             hometabsharelistview.visibility = View.VISIBLE
             viewFlipper.displayedChild = 2
+        }
+
+        homechooseall.setOnClickListener(){
+            homechooseall.setBackgroundResource(R.drawable.round_main_orange)
+            homechooseshare.setBackgroundResource(R.drawable.round_main_gray)
+            homechoosemission.setBackgroundResource(R.drawable.round_main_gray)
+            homechoosealltext.setTextColor(parseColor("#ffffff"))
+            homechoosesharetext.setTextColor(parseColor("#797979"))
+            homechoosemissiontext.setTextColor(parseColor("#797979"))
+            homelistviewFlipper.displayedChild = 0
+        }
+
+        homechooseshare.setOnClickListener(){
+            homechooseall.setBackgroundResource(R.drawable.round_main_gray)
+            homechooseshare.setBackgroundResource(R.drawable.round_main_orange)
+            homechoosemission.setBackgroundResource(R.drawable.round_main_gray)
+            homechoosealltext.setTextColor(parseColor("#797979"))
+            homechoosesharetext.setTextColor(parseColor("#ffffff"))
+            homechoosemissiontext.setTextColor(parseColor("#797979"))
+            homelistviewFlipper.displayedChild = 1
+        }
+
+        homechoosemission.setOnClickListener(){
+            homechooseall.setBackgroundResource(R.drawable.round_main_gray)
+            homechooseshare.setBackgroundResource(R.drawable.round_main_gray)
+            homechoosemission.setBackgroundResource(R.drawable.round_main_orange)
+            homechoosealltext.setTextColor(parseColor("#797979"))
+            homechoosesharetext.setTextColor(parseColor("#797979"))
+            homechoosemissiontext.setTextColor(parseColor("#ffffff"))
+            homelistviewFlipper.displayedChild = 2
         }
 
         check1.setOnClickListener(){
@@ -170,6 +211,22 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         morebtn3.setOnClickListener(){
             showPopup(morebtn3)
+        }
+
+        morebtn01.setOnClickListener(){
+            showPopup(morebtn01)
+        }
+
+        morebtn02.setOnClickListener(){
+            showPopup(morebtn02)
+        }
+
+        morebtn03.setOnClickListener(){
+            showPopup(morebtn03)
+        }
+
+        morebtn04.setOnClickListener(){
+            showPopup(morebtn04)
         }
 
         return view

@@ -699,6 +699,69 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_marginTop="10px">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginBottom="10px"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:id="@+id/home_choose_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_main_orange"
+                            android:layout_marginTop="50px"
+                            android:paddingLeft="35px"
+                            android:paddingRight="35px"
+                            android:layout_marginRight="20px">
+                            <TextView
+                                android:id="@+id/home_choose_all_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100px"
+                                android:layout_marginTop="-5px"
+                                android:text="전체"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="13dp"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/home_choose_share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_main_gray"
+                            android:layout_marginTop="50px"
+                            android:paddingLeft="35px"
+                            android:paddingRight="35px"
+                            android:layout_marginRight="20px">
+                            <TextView
+                                android:id="@+id/home_choose_share_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100px"
+                                android:layout_marginTop="-5px"
+                                android:text="공유"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="13dp"
+                                android:textColor="#797979"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/home_choose_mission"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_main_gray"
+                            android:layout_marginTop="50px"
+                            android:paddingLeft="35px"
+                            android:paddingRight="35px">
+                            <TextView
+                                android:id="@+id/home_choose_mission_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100px"
+                                android:layout_marginTop="-5px"
+                                android:text="미션"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="13dp"
+                                android:textColor="#797979"/>
+                        </LinearLayout>
+                    </LinearLayout>
 
                     <Spinner
                         android:id="@+id/spinner2"
@@ -707,305 +770,424 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10px"
                         android:textSize="12sp"/>
-
-                    <LinearLayout
+                    <ViewFlipper
+                        android:id="@+id/home_list_viewFlipper"
                         android:layout_width="match_parent"
-                        android:layout_height="300px"
-                        android:layout_marginLeft="50px"
-                        android:layout_marginRight="50px"
-                        android:layout_marginBottom="40px"
-                        android:background="@drawable/round_orange"
-                        android:gravity="center_vertical">
-
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="40px"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/notosanskr_bold"
-                                android:text="닉네임님의 버킷리스트"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="-30px"
+                                android:layout_width="match_parent"
+                                android:layout_height="300px"
+                                android:layout_marginLeft="50px"
+                                android:layout_marginRight="50px"
+                                android:layout_marginBottom="40px"
+                                android:background="@drawable/round_orange"
                                 android:gravity="center_vertical">
 
-                                <ImageView
-                                    android:layout_width="30px"
-                                    android:layout_height="30px"
-                                    android:src="@drawable/ic_clock"
-                                    android:tint="@color/text_gray" />
-
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10px"
-                                    android:fontFamily="@font/notosanskr_regular"
-                                    android:text="00.00.00 - 00.00.00"
-                                    android:textColor="@color/text_gray"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
+                                    android:layout_marginLeft="40px"
+                                    android:orientation="vertical">
 
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_bold"
+                                        android:text="닉네임님의 버킷리스트"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
+
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_clock"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="00.00.00 - 00.00.00"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="100px"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
+
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_select_tab_users"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="3"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="40px"
+                                    android:gravity="right"
+                                    android:orientation="vertical"
+                                    android:paddingTop="20px"
+                                    android:paddingBottom="20px">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_regular"
+                                        android:text="30분 전 수정됨"
+                                        android:textColor="@color/text_gray"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1" />
+
+                                    <ImageView
+                                        android:id="@+id/more_btn01"
+                                        android:layout_width="50px"
+                                        android:layout_height="50px"
+                                        android:src="@drawable/ic_more_btn"
+                                        android:tint="@color/text_gray" />
+                                </LinearLayout>
+                            </LinearLayout>
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="100px"
-                                android:layout_marginTop="-30px"
+                                android:layout_width="match_parent"
+                                android:layout_height="300px"
+                                android:layout_marginLeft="50px"
+                                android:layout_marginRight="50px"
+                                android:layout_marginBottom="40px"
+                                android:background="@drawable/round_gray"
                                 android:gravity="center_vertical">
 
-                                <ImageView
-                                    android:layout_width="30px"
-                                    android:layout_height="30px"
-                                    android:src="@drawable/ic_select_tab_users"
-                                    android:tint="@color/text_gray" />
-
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10px"
-                                    android:fontFamily="@font/notosanskr_regular"
-                                    android:text="3"
-                                    android:textColor="@color/text_gray"
-                                    android:textSize="12sp" />
+                                    android:layout_marginLeft="40px"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_bold"
+                                        android:text="여름 미션"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
+
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_clock"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="00.00.00 - 00.00.00"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="100px"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
+
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_select_tab_users"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="3"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="40px"
+                                    android:gravity="right"
+                                    android:orientation="vertical"
+                                    android:paddingTop="20px"
+                                    android:paddingBottom="20px">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_regular"
+                                        android:text="30분 전 수정됨"
+                                        android:textColor="@color/text_gray"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1" />
+
+                                    <ImageView
+                                        android:id="@+id/more_btn02"
+                                        android:layout_width="50px"
+                                        android:layout_height="50px"
+                                        android:src="@drawable/ic_more_btn"
+                                        android:tint="@color/text_gray" />
+                                </LinearLayout>
                             </LinearLayout>
-
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="40px"
-                            android:gravity="right"
-                            android:orientation="vertical"
-                            android:paddingTop="20px"
-                            android:paddingBottom="20px">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:text="30분 전 수정됨"
-                                android:textColor="@color/text_gray"
-                                android:textSize="10sp" />
-
-                            <View
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <ImageView
-                                android:id="@+id/more_btn01"
-                                android:layout_width="50px"
-                                android:layout_height="50px"
-                                android:src="@drawable/ic_more_btn"
-                                android:tint="@color/text_gray" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="300px"
-                        android:layout_marginLeft="50px"
-                        android:layout_marginRight="50px"
-                        android:layout_marginBottom="40px"
-                        android:background="@drawable/round_gray"
-                        android:gravity="center_vertical">
-
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="40px"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/notosanskr_bold"
-                                android:text="여름 미션"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="-30px"
+                                android:layout_width="match_parent"
+                                android:layout_height="300px"
+                                android:layout_marginLeft="50px"
+                                android:layout_marginRight="50px"
+                                android:layout_marginBottom="40px"
+                                android:background="@drawable/round_orange"
                                 android:gravity="center_vertical">
 
-                                <ImageView
-                                    android:layout_width="30px"
-                                    android:layout_height="30px"
-                                    android:src="@drawable/ic_clock"
-                                    android:tint="@color/text_gray" />
-
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10px"
-                                    android:fontFamily="@font/notosanskr_regular"
-                                    android:text="00.00.00 - 00.00.00"
-                                    android:textColor="@color/text_gray"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
+                                    android:layout_marginLeft="40px"
+                                    android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="100px"
-                                android:layout_marginTop="-30px"
-                                android:gravity="center_vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_bold"
+                                        android:text="닉네임님의 버킷리스트"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
 
-                                <ImageView
-                                    android:layout_width="30px"
-                                    android:layout_height="30px"
-                                    android:src="@drawable/ic_select_tab_users"
-                                    android:tint="@color/text_gray" />
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
 
-                                <TextView
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_clock"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="00.00.00 - 00.00.00"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="100px"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
+
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_select_tab_users"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="3"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10px"
-                                    android:fontFamily="@font/notosanskr_regular"
-                                    android:text="3"
-                                    android:textColor="@color/text_gray"
-                                    android:textSize="12sp" />
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="40px"
+                                    android:gravity="right"
+                                    android:orientation="vertical"
+                                    android:paddingTop="20px"
+                                    android:paddingBottom="20px">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_regular"
+                                        android:text="30분 전 수정됨"
+                                        android:textColor="@color/text_gray"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1" />
+
+                                    <ImageView
+                                        android:id="@+id/more_btn03"
+                                        android:layout_width="50px"
+                                        android:layout_height="50px"
+                                        android:src="@drawable/ic_more_btn"
+                                        android:tint="@color/text_gray" />
+                                </LinearLayout>
                             </LinearLayout>
-
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="40px"
-                            android:gravity="right"
-                            android:orientation="vertical"
-                            android:paddingTop="20px"
-                            android:paddingBottom="20px">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:text="30분 전 수정됨"
-                                android:textColor="@color/text_gray"
-                                android:textSize="10sp" />
-
-                            <View
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <ImageView
-                                android:id="@+id/more_btn02"
-                                android:layout_width="50px"
-                                android:layout_height="50px"
-                                android:src="@drawable/ic_more_btn"
-                                android:tint="@color/text_gray" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="300px"
-                        android:layout_marginLeft="50px"
-                        android:layout_marginRight="50px"
-                        android:layout_marginBottom="40px"
-                        android:background="@drawable/round_orange"
-                        android:gravity="center_vertical">
-
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="40px"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/notosanskr_bold"
-                                android:text="닉네임님의 버킷리스트"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="-30px"
+                                android:layout_width="match_parent"
+                                android:layout_height="300px"
+                                android:layout_marginLeft="50px"
+                                android:layout_marginRight="50px"
+                                android:layout_marginBottom="40px"
+                                android:background="@drawable/round_gray"
                                 android:gravity="center_vertical">
 
-                                <ImageView
-                                    android:layout_width="30px"
-                                    android:layout_height="30px"
-                                    android:src="@drawable/ic_clock"
-                                    android:tint="@color/text_gray" />
-
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10px"
-                                    android:fontFamily="@font/notosanskr_regular"
-                                    android:text="00.00.00 - 00.00.00"
-                                    android:textColor="@color/text_gray"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
+                                    android:layout_marginLeft="40px"
+                                    android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="100px"
-                                android:layout_marginTop="-30px"
-                                android:gravity="center_vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_bold"
+                                        android:text="여름 미션"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
 
-                                <ImageView
-                                    android:layout_width="30px"
-                                    android:layout_height="30px"
-                                    android:src="@drawable/ic_select_tab_users"
-                                    android:tint="@color/text_gray" />
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
 
-                                <TextView
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_clock"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="00.00.00 - 00.00.00"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="100px"
+                                        android:layout_marginTop="-30px"
+                                        android:gravity="center_vertical">
+
+                                        <ImageView
+                                            android:layout_width="30px"
+                                            android:layout_height="30px"
+                                            android:src="@drawable/ic_select_tab_users"
+                                            android:tint="@color/text_gray" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10px"
+                                            android:fontFamily="@font/notosanskr_regular"
+                                            android:text="3"
+                                            android:textColor="@color/text_gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10px"
-                                    android:fontFamily="@font/notosanskr_regular"
-                                    android:text="3"
-                                    android:textColor="@color/text_gray"
-                                    android:textSize="12sp" />
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="40px"
+                                    android:gravity="right"
+                                    android:orientation="vertical"
+                                    android:paddingTop="20px"
+                                    android:paddingBottom="20px">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/notosanskr_regular"
+                                        android:text="30분 전 수정됨"
+                                        android:textColor="@color/text_gray"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1" />
+
+                                    <ImageView
+                                        android:id="@+id/more_btn04"
+                                        android:layout_width="50px"
+                                        android:layout_height="50px"
+                                        android:src="@drawable/ic_more_btn"
+                                        android:tint="@color/text_gray" />
+                                </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="40px"
-                            android:gravity="right"
-                            android:orientation="vertical"
-                            android:paddingTop="20px"
-                            android:paddingBottom="40px">
+                    </ViewFlipper>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:text="30분 전 수정됨"
-                                android:textColor="@color/text_gray"
-                                android:textSize="10sp" />
-
-                            <View
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <ImageView
-                                android:id="@+id/more_btn03"
-                                android:layout_width="50px"
-                                android:layout_height="50px"
-                                android:src="@drawable/ic_more_btn"
-                                android:tint="@color/text_gray" />
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
             </ViewFlipper>
         </LinearLayout>
