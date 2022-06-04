@@ -1,16 +1,14 @@
 package com.example.keep_the_bucket
 
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 
@@ -25,6 +23,13 @@ class Join : AppCompatActivity() {
         val signupName = findViewById<EditText>(R.id.edit_name)
         val signupID = findViewById<EditText>(R.id.edit_email)
         val signupPassword = findViewById<EditText>(R.id.edit_password)
+        var backBtn = findViewById<ImageButton>(R.id.imgbtn_back)
+
+        // Login화면으로 돌아가기
+        backBtn.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
 
         // 계정 생성 버튼
         btn.setOnClickListener {
