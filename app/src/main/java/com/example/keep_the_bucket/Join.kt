@@ -10,12 +10,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.Exclude
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 
 class Join : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,12 @@ class Join : AppCompatActivity() {
             auth?.createUserWithEmailAndPassword(email, password)
                 ?.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        val database : FirebaseDatabase = FirebaseDatabase.getInstance()
+                        val myRef : DatabaseReference = database.getReference("user")
+
+                        var user = User(name, email)
+
+                        myRef.push().setValue(user)
 
                         Toast.makeText(
                             this, "계정 생성 완료.",
@@ -58,5 +66,13 @@ class Join : AppCompatActivity() {
     data class User(
         var name: String? = "",
         var email: String? = "",
-    )
+    ){
+        @Exclude
+        fun toMap(): Map<String, Any?>{
+            return mapOf(
+                "name" to name,
+                "email" to email
+            )
+        }
+    }
 }
