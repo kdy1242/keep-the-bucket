@@ -103,6 +103,7 @@
             android:layout_margin="3dp">
 
             <ImageView
+                android:id="@+id/ImgPlus1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -112,6 +113,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -121,6 +123,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -130,6 +133,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -139,6 +143,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -148,6 +153,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -157,6 +163,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -166,6 +173,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -175,6 +183,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -184,6 +193,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -193,6 +203,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -202,6 +213,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -211,6 +223,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -220,6 +233,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -229,6 +243,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -238,6 +253,7 @@
                 android:src="@drawable/ic_add_bingo_img_btn" />
 
             <ImageView
+                android:id="@+id/ImgPlus16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
