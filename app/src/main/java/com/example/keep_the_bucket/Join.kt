@@ -1,19 +1,21 @@
 package com.example.keep_the_bucket
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.Exclude
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 
 class Join : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,13 +25,6 @@ class Join : AppCompatActivity() {
         val signupName = findViewById<EditText>(R.id.edit_name)
         val signupID = findViewById<EditText>(R.id.edit_email)
         val signupPassword = findViewById<EditText>(R.id.edit_password)
-        var backBtn = findViewById<ImageButton>(R.id.imgbtn_back)
-
-        // Login화면으로 돌아가기
-        backBtn.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-        }
 
         // 계정 생성 버튼
         btn.setOnClickListener {
@@ -45,6 +40,12 @@ class Join : AppCompatActivity() {
             auth?.createUserWithEmailAndPassword(email, password)
                 ?.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        val database : FirebaseDatabase = FirebaseDatabase.getInstance()
+                        val myRef : DatabaseReference = database.getReference("user")
+
+                        var user = User(name, email)
+
+                        myRef.push().setValue(user)
 
                         Toast.makeText(
                             this, "계정 생성 완료.",
@@ -63,5 +64,13 @@ class Join : AppCompatActivity() {
     data class User(
         var name: String? = "",
         var email: String? = "",
-    )
+    ){
+        @Exclude
+        fun toMap(): Map<String, Any?>{
+            return mapOf(
+                "name" to name,
+                "email" to email
+            )
+        }
+    }
 }
