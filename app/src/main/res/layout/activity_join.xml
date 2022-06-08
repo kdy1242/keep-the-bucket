@@ -29,25 +29,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="31dp"
-        android:text="이메일을 입력 후"
-        android:textSize="20sp"
-        android:includeFontPadding="false"
-        android:fontFamily="@font/notosanskr_regular"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="@string/bold"
-        android:includeFontPadding="false"
-        android:textSize="20sp"
-        android:fontFamily="@font/notosanskr_regular"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="16dp"
         android:text="이메일 입력"
@@ -55,22 +36,38 @@
         android:textColor="@color/black"
         android:fontFamily="@font/notosanskr_regular"/>
     <EditText
-        android:layout_width="328dp"
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:textSize="14sp"
-        android:hint="이메일 주소 또는 아이디"
+        android:hint="이름"
         android:paddingLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/login_btn_round"
+        android:fontFamily="@font/notosanskr_regular"/>
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="14sp"
+        android:hint="이메일 주소"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/login_btn_round"
         android:fontFamily="@font/notosanskr_regular"/>
     <FrameLayout
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
         <EditText
-            android:layout_width="328dp"
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:textSize="14sp"
             android:hint="패스워드"
@@ -93,48 +90,16 @@
     </FrameLayout>
 
     <Button
-        android:layout_width="328dp"
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/login_btn_round"
-        android:text="인증번호 보내기"
+        android:text="회원 가입"
         android:textSize="14sp"
         android:fontFamily="@font/notosanskr_bold"
         android:textColor="#E2E2E2"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="73dp"
-        android:layout_marginLeft="16dp"
-        android:text="인증번호 입력"
-        android:textSize="12sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/notosanskr_regular"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <EditText
-            android:layout_width="198dp"
-            android:layout_height="48dp"
-            android:hint="6자리를 입력해주세요"
-            android:paddingLeft="16dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:layout_marginLeft="16dp"
-            android:textSize="14sp"
-            android:textColor="#E2E2E2"
-            android:background="@drawable/login_btn_round"/>
-        <Button
-            android:layout_width="122dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="8dp"
-            android:text="확인"
-            android:textSize="14sp"
-            android:fontFamily="@font/notosanskr_bold"
-            android:textColor="#E2E2E2"
-            android:background="@drawable/login_btn_round"/>
-    </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "75604450589",
+    "firebase_url": "https://keepthebucket-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "keepthebucket",
+    "storage_bucket": "keepthebucket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75604450589:android:a282afdb9ad5dc3ef715f4",
+        "android_client_info": {
+          "package_name": "com.example.keep_the_bucket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75604450589-9btcbttgbglp6tmqen2ttvui8um2o923.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.keep_the_bucket",
+            "certificate_hash": "83a845ec968a2711d899b7a3109ef10cbc5b1628"
+          }
+        },
+        {
+          "client_id": "75604450589-kji9vof5f60b7bs5j8jvag0j4993npol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbB81GpymXmL4nNs4uOPwdWHuGZJjQSTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75604450589-kji9vof5f60b7bs5j8jvag0j4993npol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
