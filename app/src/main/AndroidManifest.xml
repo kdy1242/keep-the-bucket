@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.keep_the_bucket">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permassion.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,6 +14,7 @@
         <activity android:name=".DiaryActivity"></activity>
         <activity android:name=".Join"></activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Login"></activity>
         <!--
          <activity android:name=".Home"
             android:exported="true">
@@ -27,8 +29,8 @@
         <!-- android:name=".Join" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".Login"
-            tools:ignore="Instantiatable">
+            android:name=".FragmentList"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
