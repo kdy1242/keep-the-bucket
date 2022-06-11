@@ -3,6 +3,7 @@
     android:layout_width="328dp"
     android:layout_height="190dp"
     android:background="@drawable/round_bingo"
+    android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
@@ -54,13 +55,14 @@
         android:id="@+id/date_edtxt"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/date_txt"
-        app:layout_constraintStart_toStartOf="@id/date_txt"
         android:backgroundTint="@color/main_orange"
-        android:padding="6dp"
         android:fontFamily="@font/notosanskr_regular"
+        android:hint="ex) 2022-06-12"
         android:includeFontPadding="false"
-        android:textSize="14sp" />
+        android:padding="6dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/date_txt"
+        app:layout_constraintTop_toBottomOf="@id/date_txt" />
 
     <TextView
         android:id="@+id/cancel_txt"
