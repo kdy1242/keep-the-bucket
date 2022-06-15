@@ -8,6 +8,10 @@ android {
     compileSdkVersion 31
     buildToolsVersion '30.0.3'
 
+    viewBinding{
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.keep_the_bucket"
         minSdkVersion 30
@@ -16,9 +20,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildFeatures {
-        viewBinding = true
     }
 
     buildTypes {
@@ -33,6 +34,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -64,7 +68,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.3.1')
 
     // firebase storage
-    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-storage-ktx'
 
     // When using the BoM, you don't specify versions in Firebase library dependencies
 
