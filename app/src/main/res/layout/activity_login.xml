@@ -55,7 +55,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="53dp"
-        android:background="@drawable/login_btn_round"
+        android:background="@drawable/login_text"
         android:fontFamily="@font/notosanskr_regular"/>
     <FrameLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:hint="패스워드"
             android:inputType="textPassword"
             android:paddingLeft="16dp"
-            android:background="@drawable/login_btn_round"
+            android:background="@drawable/login_text"
             android:fontFamily="@font/notosanskr_regular"/>
         <Button
             android:layout_width="36dp"
