@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.keep_the_bucket"
-        minSdkVersion 28
+        minSdkVersion 30
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -50,7 +50,6 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.google.firebase:firebase-auth:21.0.3'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -31,13 +31,13 @@
         android:id="@+id/title_edtxt"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title_txt"
-        app:layout_constraintStart_toStartOf="@id/title_txt"
         android:backgroundTint="@color/main_orange"
-        android:padding="6dp"
         android:fontFamily="@font/notosanskr_regular"
         android:includeFontPadding="false"
-        android:textSize="14sp" />
+        android:padding="6dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/title_txt"
+        app:layout_constraintTop_toBottomOf="@id/title_txt" />
 
     <TextView
         android:id="@+id/date_txt"
