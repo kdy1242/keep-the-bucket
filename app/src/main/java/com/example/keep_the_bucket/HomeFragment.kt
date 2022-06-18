@@ -2,15 +2,18 @@ package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.Color.parseColor
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
+    lateinit var myListAdapter: MyListAdapter
+    val datas = mutableListOf<MyListData>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -34,19 +37,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val hometabsharelistview :View = view.findViewById(R.id.home_tab_sharelist_view)
         val viewFlipper :ViewFlipper = view.findViewById(R.id.home_viewflipper)
         val homelistviewFlipper :ViewFlipper = view.findViewById(R.id.home_list_viewFlipper)
-        val check1 :CheckBox = view.findViewById(R.id.home_mylist_check1)
-        val check2 :CheckBox = view.findViewById(R.id.home_mylist_check2)
-        val check3 :CheckBox = view.findViewById(R.id.home_mylist_check3)
-        val friend1check1 :CheckBox = view.findViewById(R.id.home_friend1_check1)
-        val friend1check2 :CheckBox = view.findViewById(R.id.home_friend1_check2)
-        val friend2check1 :CheckBox = view.findViewById(R.id.home_friend2_check1)
-        val friend2check2 :CheckBox = view.findViewById(R.id.home_friend2_check2)
         val homesearchimg :ImageView = view.findViewById(R.id.home_search_img)
         val spinner :Spinner = view.findViewById(R.id.spinner)
         val spinner2 :Spinner = view.findViewById(R.id.spinner2)
-        val morebtn1 :ImageView = view.findViewById(R.id.more_btn1)
-        val morebtn2 :ImageView = view.findViewById(R.id.more_btn2)
-        val morebtn3 :ImageView = view.findViewById(R.id.more_btn3)
         val morebtn01 :ImageView = view.findViewById(R.id.more_btn01)
         val morebtn02 :ImageView = view.findViewById(R.id.more_btn02)
         val morebtn03 :ImageView = view.findViewById(R.id.more_btn03)
@@ -140,77 +133,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             homelistviewFlipper.displayedChild = 2
         }
 
-        check1.setOnClickListener(){
-            if(check1.isChecked){
-                check1.setTextColor(parseColor("#868686"))
-            }else{
-                check1.setTextColor(Color.BLACK)
-            }
-        }
-
-        check2.setOnClickListener(){
-            if(check2.isChecked){
-                check2.setTextColor(parseColor("#868686"))
-            } else{
-                check2.setTextColor(Color.BLACK)
-            }
-        }
-
-        check3.setOnClickListener(){
-            if(check3.isChecked){
-                check3.setTextColor(parseColor("#868686"))
-            }else{
-                check3.setTextColor(Color.BLACK)
-            }
-        }
-
-        friend1check1.setOnClickListener(){
-            if(friend1check1.isChecked){
-                friend1check1.setTextColor(parseColor("#868686"))
-            }else{
-                friend1check1.setTextColor(Color.BLACK)
-            }
-        }
-
-        friend1check2.setOnClickListener(){
-            if(friend1check2.isChecked){
-                friend1check2.setTextColor(parseColor("#868686"))
-            }else{
-                friend1check2.setTextColor(Color.BLACK)
-            }
-        }
-
-        friend2check1.setOnClickListener(){
-            if(friend2check1.isChecked){
-                friend2check1.setTextColor(parseColor("#868686"))
-            }else{
-                friend2check1.setTextColor(Color.BLACK)
-            }
-        }
-
-        friend2check2.setOnClickListener(){
-            if(friend2check2.isChecked){
-                friend2check2.setTextColor(parseColor("#868686"))
-            }else{
-                friend2check2.setTextColor(Color.BLACK)
-            }
-        }
-
         homesearchimg.setOnClickListener(){
             val intent = Intent(activity, SearchUserActivity::class.java)
             startActivity(intent)
-        }
-
-        morebtn1.setOnClickListener(){
-            showPopup(morebtn1)
-        }
-
-        morebtn2.setOnClickListener(){
-            showPopup(morebtn2)
-        }
-
-        morebtn3.setOnClickListener(){
-            showPopup(morebtn3)
         }
 
         morebtn01.setOnClickListener(){
@@ -236,5 +161,21 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val inflater: MenuInflater = popup.menuInflater
         inflater.inflate(R.menu.popup_menu, popup.menu)
         popup.show()
+    }
+    private fun initRecycler() {
+        myListAdapter = MyListAdapter(this)
+        recyclerView.adapter = myListAdapter
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+        recyclerView.layoutManager=layoutManager
+
+
+        datas.apply {
+            add(MyListData(my_list_title = "테스트", my_list_date = "2020.04.03", my_list_people = 24, my_list_time = "1시간 전"))
+
+            myListAdapter.datalist = datas
+            myListAdapter.notifyDataSetChanged()
+
+        }
     }
 }
