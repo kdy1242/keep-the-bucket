@@ -66,7 +66,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/login_btn_round"
-        android:fontFamily="@font/notosanskr_regular"/>
+        android:fontFamily="@font/notosanskr_regular"
+        android:singleLine="true"/>
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
@@ -78,7 +79,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/login_btn_round"
-        android:fontFamily="@font/notosanskr_regular"/>
+        android:fontFamily="@font/notosanskr_regular"
+        android:singleLine="true"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
@@ -94,7 +96,8 @@
             android:inputType="textPassword"
             android:paddingLeft="16dp"
             android:background="@drawable/login_btn_round"
-            android:fontFamily="@font/notosanskr_regular"/>
+            android:fontFamily="@font/notosanskr_regular"
+            android:singleLine="true"/>
         <Button
             android:layout_width="36dp"
             android:layout_height="16dp"
