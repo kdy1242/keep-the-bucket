@@ -44,6 +44,7 @@ class BucketListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         setUpViewPager()
+        dots_indicator.setViewPager(viewPager)
     }
 
     private fun setUpViewPager() {
