@@ -36,21 +36,24 @@ class BucketListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // setUpViewPager()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         setUpViewPager()
     }
 
     private fun setUpViewPager() {
         viewPagers = viewPager
 
-        var adapter = ViewPagerAdapter(requireFragmentManager())
+        val adapter = ViewPagerAdapter(childFragmentManager)
         adapter.addFragment(BingoFragment(), "bingo")
         adapter.addFragment(BingoListFragment(), "bingoList")
 
-        viewPagers!!.adapter = adapter
+        viewPagers.adapter = adapter
     }
 
 }

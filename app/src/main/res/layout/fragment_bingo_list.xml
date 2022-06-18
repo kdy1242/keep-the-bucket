@@ -11,10 +11,31 @@
         android:layout_height="348dp"
         android:background="@drawable/round_bingo"
         android:elevation="1dp"
+        android:orientation="vertical"
+        android:padding="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <CheckBox
+            android:id="@+id/bingo_check1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/main_orange"
+            android:checked="false"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="버킷리스트1"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/bingo_check2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/main_orange"
+            android:checked="false"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="버킷리스트2"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
