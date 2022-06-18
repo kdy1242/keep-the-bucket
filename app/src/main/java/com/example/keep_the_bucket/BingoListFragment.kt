@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_bingo_list.*
 
 class BingoListFragment : Fragment() {
 
@@ -18,6 +19,10 @@ class BingoListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        // PostFragment.kt
+        add_list_btn.setOnClickListener {
+            BingoListDialog(requireContext()).show()
+        }
     }
 
     override fun onResume() {
