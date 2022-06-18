@@ -41,11 +41,13 @@ class Join : AppCompatActivity() {
                 ?.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         val database : FirebaseDatabase = FirebaseDatabase.getInstance()
-                        val myRef : DatabaseReference = database.getReference("user")
+                        val myRef : DatabaseReference = database.getReference("user/")
+
+                        val id = email.replace(".", "")
 
                         var user = User(name, email)
 
-                        myRef.push().setValue(user)
+                        myRef.child(id).setValue(user);
 
                         Toast.makeText(
                             this, "계정 생성 완료.",
