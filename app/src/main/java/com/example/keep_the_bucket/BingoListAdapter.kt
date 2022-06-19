@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.PopupMenu
-import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeMainMyListAdapter(private val context: Context) : RecyclerView.Adapter<HomeMainMyListAdapter.ViewHolder>() {
+class BingoListAdapter(private val context: Context) : RecyclerView.Adapter<BingoListAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<HomeMainMyListData>()
+    var datas = mutableListOf<BingoListData>()
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_main_my_list,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_bingo_list,parent,false)
         return ViewHolder(view)
     }
 
@@ -28,11 +26,9 @@ class HomeMainMyListAdapter(private val context: Context) : RecyclerView.Adapter
 
         private val check: CheckBox = itemView.findViewById(R.id.check)
 
-        fun bind(item: HomeMainMyListData) {
+        fun bind(item: BingoListData) {
             check.text = item.check
             check.isChecked = item.setChecked
         }
     }
-
-
 }
