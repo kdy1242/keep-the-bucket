@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
-import com.example.keep_the_bucket.databinding.FragmentBucketListBinding
 import kotlinx.android.synthetic.main.fragment_bucket_list.*
 import java.util.zip.Inflater
 
