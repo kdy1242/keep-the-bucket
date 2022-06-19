@@ -16,10 +16,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <!--<activity android:name=".HomeMainFragment" /> -->
         <activity android:name=".DiaryActivity" />
-        <activity android:name=".Join" />
-        <activity android:name=".Login" />
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SlashActivity" /> <!-- <activity android:name=".MainActivity"></activity> -->
-        <activity android:name=".FragmentList"/>
         <!--
          <activity android:name=".Home"
             android:exported="true">

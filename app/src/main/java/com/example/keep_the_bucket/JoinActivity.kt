@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 
-class Join : AppCompatActivity() {
+class JoinActivity : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
 
 
