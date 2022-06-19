@@ -119,10 +119,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/login_btn_round"
+        android:background="@drawable/login_btnchange"
         android:text="회원 가입"
         android:textSize="14sp"
         android:fontFamily="@font/notosanskr_bold"
-        android:textColor="#E2E2E2"/>
+        android:textColor="@color/white"/>
 
 </LinearLayout>

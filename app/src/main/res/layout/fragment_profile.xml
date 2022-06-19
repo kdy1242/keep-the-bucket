@@ -11,13 +11,13 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200px"
+            android:layout_height="70dp"
             android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50px"
+                android:layout_marginLeft="20dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:text="마이페이지"
                 android:textColor="@color/black"
@@ -27,15 +27,15 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
             <ImageView
-                android:layout_width="70px"
-                android:layout_height="70px"
-                android:layout_marginRight="60px"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ic_search_btn"
                 android:tint="@color/black"/>
             <ImageView
-                android:layout_width="70px"
-                android:layout_height="70px"
-                android:layout_marginRight="50px"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ic_notice_btn"
                 android:tint="@color/black"/>
         </LinearLayout>
@@ -43,40 +43,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50px"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200px"
+                android:layout_height="70dp"
                 android:background="@color/white"
                 android:gravity="center_vertical">
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="200px"
-                    android:layout_height="200px"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/ic_launcher_background"
-                    android:layout_marginLeft="50px"
-                    android:layout_marginRight="50px"/>
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:background="@color/white"
                     android:orientation="vertical"
-                    android:layout_marginBottom="15px">
+                    android:layout_marginBottom="6dp">
                     <TextView
+                        android:id="@+id/name"
                         android:layout_width="wrap_content"
-                        android:layout_height="100px"
+                        android:layout_height="41dp"
                         android:fontFamily="@font/notosanskr_bold"
                         android:text="이름"
-                        android:textSize="50px"
+                        android:textSize="20sp"
                         android:textColor="@color/black"/>
+
                     <TextView
+                        android:id="@+id/email"
                         android:layout_width="wrap_content"
-                        android:layout_height="70px"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="1dp"
                         android:fontFamily="@font/notosanskr_regular"
                         android:text="메일"
-                        android:textSize="35px"
-                        android:layout_marginLeft="4px"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
                 </LinearLayout>
                 <View
                     android:layout_width="0dp"
@@ -86,16 +89,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_arrow_btn"
-                    android:layout_marginRight="50px"/>
+                    android:layout_marginRight="20dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220px"
+                android:layout_height="80dp"
                 android:background="@drawable/round"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px"
-                android:layout_marginTop="100px"
-                android:layout_marginBottom="100px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="35dp">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -111,7 +114,7 @@
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="70px"
+                        android:layout_height="30dp"
                         android:text="성공한 리스트"
                         android:fontFamily="@font/notosanskr_regular"
                         android:textColor="#707070"
@@ -119,7 +122,7 @@
                 </LinearLayout>
                 <View
                     android:layout_width="3px"
-                    android:layout_height="160px"
+                    android:layout_height="60dp"
                     android:background="@color/main_orange"
                     android:layout_gravity="center"/>
                 <LinearLayout
@@ -137,7 +140,7 @@
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="70px"
+                        android:layout_height="30dp"
                         android:text="내 리스트"
                         android:fontFamily="@font/notosanskr_regular"
                         android:textColor="#707070"
@@ -157,14 +160,14 @@
             android:orientation="vertical">
             <View
                 android:layout_width="match_parent"
-                android:layout_height="50px"
+                android:layout_height="15dp"
                 android:background="#F1F1F1"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150px"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -176,21 +179,22 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"/>
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_btn"/>
+                    android:src="@drawable/ic_arrow_btn" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="3px"
+                android:layout_height="1dp"
                 android:background="#F1F1F1"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150px"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -209,14 +213,14 @@
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="3px"
+                android:layout_height="1dp"
                 android:background="#F1F1F1"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150px"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -235,14 +239,14 @@
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="50px"
+                android:layout_height="15dp"
                 android:background="#F1F1F1"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150px"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -261,14 +265,14 @@
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="3px"
+                android:layout_height="1dp"
                 android:background="#F1F1F1"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150px"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -287,14 +291,14 @@
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="50px"
+                android:layout_height="15dp"
                 android:background="#F1F1F1"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150px"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="50px"
-                android:layout_marginRight="50px">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

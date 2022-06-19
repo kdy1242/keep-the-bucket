@@ -1,14 +1,18 @@
 package com.example.keep_the_bucket
 
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
-
+    lateinit var dbHelper : DBHelper
+    lateinit var db : SQLiteDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -19,6 +23,25 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view =  inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val name : TextView = view.findViewById(R.id.name)
+        val email : TextView = view.findViewById(R.id.email)
+
+        dbHelper = DBHelper(requireContext(), "newdb.db", null, 1)
+        db = dbHelper.writableDatabase
+
+        var query = "SELECT * FROM User;"
+
+        val cursor = db.rawQuery(query, null)
+
+        while(cursor.moveToNext()){
+            val dbemail = cursor.getString(0)
+            val dbname = cursor.getString(1)
+            name?.text = dbname;
+            email?.text = dbemail;
+        }
+
+        return view
     }
 }

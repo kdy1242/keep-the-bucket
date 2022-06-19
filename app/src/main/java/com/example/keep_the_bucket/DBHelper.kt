@@ -13,7 +13,7 @@ class DBHelper(
 
 
     override fun onCreate(db: SQLiteDatabase) {
-        var sql : String = "CREATE TABLE if not exists User (email primary key, name VARCHAR);";
+        var sql : String = "CREATE TABLE if not exists User (email VARCHAR, name VARCHAR);";
         db.execSQL(sql)
     }
 

@@ -16,8 +16,6 @@ import kotlinx.android.synthetic.main.fragment_users.*
 
 
 class UsersFragment : Fragment(R.layout.fragment_users) {
-    lateinit var friendsListAdapter: FriendsListAdapter
-    val datas = mutableListOf<FriendsListData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,22 +58,7 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
             startActivity(intent)
         }
 
-        initRecycler()
-
         return view
     }
 
-    private fun initRecycler() {
-        friendsListAdapter = FriendsListAdapter(requireContext())
-        friendsRecycle.adapter = friendsListAdapter
-
-
-        datas.apply {
-            add(FriendsListData(img = R.drawable.test_img1, name = "mary", email = "nhsally@naver.com"))
-
-            friendsListAdapter.datas = datas
-            friendsListAdapter.notifyDataSetChanged()
-
-        }
-    }
 }

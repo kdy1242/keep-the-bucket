@@ -116,11 +116,11 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="43dp"
         android:onClick="onClick"
-        android:background="@drawable/login_btn_round"
+        android:background="@drawable/login_btnchange"
         android:text="로그인"
         android:textSize="14sp"
         android:fontFamily="@font/notosanskr_bold"
-        android:textColor="#E2E2E2"/>
+        android:textColor="@color/white"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
