@@ -23,165 +23,373 @@
             android:columnCount="4"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/ImgPlus1"
+            <FrameLayout
+                android:id="@+id/bingo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                android:padding="2dp">
 
-            <ImageView
-                android:id="@+id/ImgPlus2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <ImageView
+                    android:id="@+id/bingo_img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
 
-            <ImageView
-                android:id="@+id/ImgPlus3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <TextView
+                    android:id="@+id/bingo_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
 
-            <ImageView
-                android:id="@+id/ImgPlus4"
+            <FrameLayout
+                android:id="@+id/bingo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                android:padding="2dp">
 
-            <ImageView
-                android:id="@+id/ImgPlus5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <ImageView
+                    android:id="@+id/bingo_img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
 
-            <ImageView
-                android:id="@+id/ImgPlus6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <TextView
+                    android:id="@+id/bingo_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
 
-            <ImageView
-                android:id="@+id/ImgPlus7"
+            <FrameLayout
+                android:id="@+id/bingo3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                android:padding="2dp">
 
-            <ImageView
-                android:id="@+id/ImgPlus8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <ImageView
+                    android:id="@+id/bingo_img3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
 
-            <ImageView
-                android:id="@+id/ImgPlus9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <TextView
+                    android:id="@+id/bingo_txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
 
-            <ImageView
-                android:id="@+id/ImgPlus10"
+            <FrameLayout
+                android:id="@+id/bingo4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                android:padding="2dp">
 
-            <ImageView
-                android:id="@+id/ImgPlus11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <ImageView
+                    android:id="@+id/bingo_img4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
 
-            <ImageView
-                android:id="@+id/ImgPlus12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <TextView
+                    android:id="@+id/bingo_txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
 
-            <ImageView
-                android:id="@+id/ImgPlus13"
+            <FrameLayout
+                android:id="@+id/bingo5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                android:padding="2dp">
 
-            <ImageView
-                android:id="@+id/ImgPlus14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <ImageView
+                    android:id="@+id/bingo_img5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
 
-            <ImageView
-                android:id="@+id/ImgPlus15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                <TextView
+                    android:id="@+id/bingo_txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
 
-            <ImageView
-                android:id="@+id/ImgPlus16"
+            <FrameLayout
+                android:id="@+id/bingo6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:padding="2dp"
-                android:src="@drawable/ic_bingo_img" />
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bingo16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/bingo_img16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bingo_img" />
+
+                <TextView
+                    android:id="@+id/bingo_txt16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="text" />
+            </FrameLayout>
 
         </GridLayout>
 
