@@ -2,6 +2,7 @@ package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +13,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
 
-    lateinit var homeMainMyListAdapter: HomeMainMyListAdapter
-    val mydatas = mutableListOf<HomeMainMyListData>()
+    lateinit var BingoListAdapter: BingoListAdapter
+    val listdatas = mutableListOf<BingoListData>()
     lateinit var homeMainFriendsListAdapter: HomeMainFriendsAdapter
     val friendsdatas = mutableListOf<HomeMainFriendsData>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     @SuppressLint("ResourceAsColor")
@@ -28,11 +29,11 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_main, container, false)
-        val recyclerViewMyList: RecyclerView = view.findViewById(R.id.recyclerView_MyList)
+        val recyclerViewBingoList: RecyclerView = view.findViewById(R.id.recyclerView_MyBingoList)
         val recyclerViewFriendsList: RecyclerView = view.findViewById(R.id.recyclerView_FriendsList)
 
-        homeMainMyListAdapter = HomeMainMyListAdapter(requireContext())
-        recyclerViewMyList.adapter = homeMainMyListAdapter
+        BingoListAdapter = BingoListAdapter(requireContext())
+        recyclerViewBingoList.adapter = BingoListAdapter
 
         homeMainFriendsListAdapter = HomeMainFriendsAdapter(requireContext())
         recyclerViewFriendsList.adapter = homeMainFriendsListAdapter
@@ -40,12 +41,15 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
         recyclerViewFriendsList.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
-        mydatas.apply {
-            add(HomeMainMyListData(check = "테스트", setChecked = true))
-            add(HomeMainMyListData(check = "테스트", setChecked = true))
+        listdatas.apply {
+            add(BingoListData(check = "테스트", setChecked = false))
+            add(BingoListData(check = "테스트", setChecked = false))
 
-            homeMainMyListAdapter.datas = mydatas
-            homeMainMyListAdapter.notifyDataSetChanged()
+            BingoListAdapter.datas = listdatas
+            BingoListAdapter.notifyDataSetChanged()
+
+
+            Log.d("test", "list test home")
 
         }
 
