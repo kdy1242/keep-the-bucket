@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="18dp">
+    <LinearLayout
+        android:layout_width="270dp"
+        android:background="@drawable/round_border_gray"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/profileImg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_friends_item"
+                android:backgroundTint="#848484">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="닉네임"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/check1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/main_orange"
+            android:checked="false"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="버킷리스트1"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/check2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/main_orange"
+            android:checked="false"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="버킷리스트2"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>

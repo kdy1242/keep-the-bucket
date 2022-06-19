@@ -17,17 +17,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="107dp"
+                android:layout_height="98dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_orange"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="18dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="3dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="25sp"
@@ -38,7 +41,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="48sp"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/notosanskr_bold"
                         android:text="여름 미션"
                         android:textColor="@color/black"
@@ -53,6 +56,76 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_arrow_btn"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="18dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="나의 버킷리스트"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:text="모두보기"
+                    android:textColor="#A0A0A0"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_arrow_btn"
+                    android:tint="#A0A0A0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/round_border"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_MyList"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="친구의 버킷리스트"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_FriendsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

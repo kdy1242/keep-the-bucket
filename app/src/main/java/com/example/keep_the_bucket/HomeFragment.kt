@@ -60,10 +60,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         return view
     }
-    fun showPopup(v: View) {
-        val popup = PopupMenu(requireContext(), v)
-        val inflater: MenuInflater = popup.menuInflater
-        inflater.inflate(R.menu.popup_menu, popup.menu)
-        popup.show()
-    }
 }
