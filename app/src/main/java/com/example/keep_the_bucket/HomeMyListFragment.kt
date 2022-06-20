@@ -1,12 +1,14 @@
 package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +34,7 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
         val view = inflater.inflate(R.layout.fragment_home_my_list, container, false)
         val spinner : Spinner = view.findViewById(R.id.spinner)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        val addList: ImageView = view.findViewById(R.id.addList)
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.itemList,
@@ -54,6 +57,11 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
             homeMyListAdapter.datas = datas
             homeMyListAdapter.notifyDataSetChanged()
 
+        }
+
+        addList.setOnClickListener{
+            val intent = Intent(requireContext(), AddBucketList::class.java)
+            startActivity(intent)
         }
 
         return view

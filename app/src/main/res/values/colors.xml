@@ -10,4 +10,5 @@
     <color name="main_orange">#F8BAA0</color>
     <color name="text_gray">#868686</color>
     <color name="logo_back">#FEF8EE</color>
+    <color name="transparent">#1A000000</color>
 </resources>
