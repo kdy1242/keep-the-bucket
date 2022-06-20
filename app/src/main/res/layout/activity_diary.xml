@@ -78,9 +78,12 @@
         android:text="test txt" />
 
     <Button
+        android:id="@+id/diary_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="완료"
+        android:textColor="@color/white"
+        android:background="@drawable/login_btn_after"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 
