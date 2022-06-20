@@ -1,11 +1,8 @@
 package com.example.keep_the_bucket
 
-import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -17,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     var auth : FirebaseAuth? = null
     lateinit var dbHelper : DBHelper
     lateinit var db :SQLiteDatabase
@@ -35,7 +32,7 @@ class Login : AppCompatActivity() {
         val join = findViewById<Button>(R.id.join)
 
         join.setOnClickListener{
-            val intent = Intent (this, Join::class.java)
+            val intent = Intent (this, JoinActivity::class.java)
             startActivity(intent)
         }
 
