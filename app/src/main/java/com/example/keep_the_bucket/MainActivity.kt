@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
+
+    var fbAuth : FirebaseAuth? = null
+    var fbFirestore : FirebaseFirestore? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,6 +31,18 @@ class MainActivity : AppCompatActivity() {
                 R.id.setting -> replaceFragment(profileFragment)
             }
             true
+        }
+
+        fbAuth = FirebaseAuth.getInstance()
+        fbFirestore = FirebaseFirestore.getInstance()
+
+        if(true)
+        {
+            var userInfo = UserModel()
+
+            userInfo.uid = fbAuth?.uid
+            userInfo.userId = fbAuth?.currentUser?.email
+            fbFirestore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
         }
 
     }
