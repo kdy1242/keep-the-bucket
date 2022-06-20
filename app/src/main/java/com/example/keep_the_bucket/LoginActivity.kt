@@ -3,6 +3,7 @@ package com.example.keep_the_bucket
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -51,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
                     task ->
                 if(task.isSuccessful) {
                     // Login, 아이디와 패스워드가 맞았을 때
+                    Log.d("test", "로그인 테스트")
                     val id = email.text.toString().replace(".", "")
                     database = database.child(id)
                     database.get().addOnSuccessListener {

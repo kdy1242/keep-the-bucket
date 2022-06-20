@@ -13,7 +13,7 @@ import java.util.zip.Inflater
 class BucketListFragment : Fragment() {
 //    private lateinit var friendsAdapter: FriendsAdapter
 //    val datas = mutableListOf<FriendsData>()
-    lateinit var myFragment: View
+    lateinit var bucketListFragment: View
     lateinit var viewPagers: ViewPager
 
 
@@ -29,8 +29,8 @@ class BucketListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        myFragment = inflater.inflate(R.layout.fragment_bucket_list, container, false)
-        return myFragment
+        bucketListFragment = inflater.inflate(R.layout.fragment_bucket_list, container, false)
+        return bucketListFragment
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

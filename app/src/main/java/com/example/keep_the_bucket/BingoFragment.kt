@@ -19,21 +19,19 @@ class BingoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentBingoBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
 
-        // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_bingo, container, false)
     }
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        ImgPlus1.setOnClickListener {
-//            activity?.let{
-//                val intent = Intent(context, DiaryActivity::class.java)
-//                startActivity(intent)
-//            }
-//        }
-//    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        bingo1.setOnClickListener {
+            activity?.let{
+                val intent = Intent(context, DiaryActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.main.activity_diary.*
 
 
 class DiaryActivity : AppCompatActivity() {
@@ -20,18 +21,15 @@ class DiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary)
 
-        var backbtn = findViewById<ImageView>(R.id.back_btn)
-        var DiaryImg = findViewById<ImageView>(R.id.diary_img)
-
-        DiaryImg.setOnClickListener {
+        diary_img.setOnClickListener {
             permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
         }
 
-        backbtn.setOnClickListener {
-            val intent = Intent(this, FragmentList::class.java)
-            startActivity(intent)
+        back_btn.setOnClickListener {
+            finish()
         }
     }
+
     val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()){
             uri -> uploadImage(uri)
     }
