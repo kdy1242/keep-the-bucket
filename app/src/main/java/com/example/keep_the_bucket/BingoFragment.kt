@@ -21,12 +21,10 @@ class BingoFragment : Fragment() {
         _binding = FragmentBingoBinding.inflate(inflater, container, false)
         return binding.root
 
-        // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_bingo, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         bingo1.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, DiaryActivity::class.java)

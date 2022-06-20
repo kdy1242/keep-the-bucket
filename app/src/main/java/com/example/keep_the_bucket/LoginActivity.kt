@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
                         val v3 = v2.replace(",", "")
                         var v4 = v3.split(" ")
 
-                        val name = v4[0].split("=")
+                        val name = v4[1].split("=")
                         val email = v4[1].split("=")
                         var query = "INSERT INTO User values('" + email[1] + "', '" + name[1] + "');"
                         db.execSQL(query)

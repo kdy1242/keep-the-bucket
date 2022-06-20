@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.main.activity_diary.*
 
 
 class DiaryActivity : AppCompatActivity() {
@@ -36,12 +37,7 @@ class DiaryActivity : AppCompatActivity() {
         dbHelper = DBHelper(this, "diary.db", null, 1)
         db = dbHelper.writableDatabase
 
-        val DiaryContents = findViewById<EditText>(R.id.diary_contents)
-        var backbtn = findViewById<ImageView>(R.id.back_btn)
-        var DiaryImg = findViewById<ImageView>(R.id.diary_img)
-        val DiarySave = findViewById<Button>(R.id.diary_save)
-
-        DiarySave.setOnClickListener {
+        diary_save.setOnClickListener {
             var query = "SELECT * FROM User;"
 
             val cursor = db.rawQuery(query, null)
@@ -54,23 +50,22 @@ class DiaryActivity : AppCompatActivity() {
                 val database: FirebaseDatabase = FirebaseDatabase.getInstance()
                 val myRef: DatabaseReference = database.getReference("user/")
 
-                val DiaryKey = DiaryContents.text.toString().replace(" ", "");
+                val DiaryKey = diary_contents.text.toString().replace(" ", "");
 
-                var diary = JoinActivity.List(DiaryContents.text.toString())
+                var diary = JoinActivity.List(diary_contents.text.toString())
 
                 myRef.child(key).child(DiaryKey).setValue(diary);
 
                 finish()
             }
+        }
+        diary_img.setOnClickListener {
+            permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+        }
 
-            DiaryImg.setOnClickListener {
-                permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
-            }
-
-            backbtn.setOnClickListener {
-                val intent = Intent(this, BingoFragment::class.java)
-                startActivity(intent)
-            }
+        back_btn.setOnClickListener {
+            val intent = Intent(this, BingoFragment::class.java)
+            startActivity(intent)
         }
     }
     val galleryLauncher =
