@@ -68,7 +68,7 @@ class DiaryActivity : AppCompatActivity() {
             }
 
             backbtn.setOnClickListener {
-                val intent = Intent(this, FragmentList::class.java)
+                val intent = Intent(this, BingoFragment::class.java)
                 startActivity(intent)
             }
         }

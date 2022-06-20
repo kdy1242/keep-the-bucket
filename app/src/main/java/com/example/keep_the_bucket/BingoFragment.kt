@@ -21,6 +21,8 @@ class BingoFragment : Fragment() {
         _binding = FragmentBingoBinding.inflate(inflater, container, false)
         return binding.root
 
+        // Inflate the layout for this fragment
+        // return inflater.inflate(R.layout.fragment_bingo, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
