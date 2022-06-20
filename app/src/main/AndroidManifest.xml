@@ -21,7 +21,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity
-            android:name=".GoogleLoginAcitivty"
+            android:name=".GoogleLoginActivity"
             tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

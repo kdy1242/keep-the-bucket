@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 
-class GoogleLoginAcitivty : AppCompatActivity(), View.OnClickListener {
+class GoogleLoginActivity : AppCompatActivity(), View.OnClickListener {
 
 
     //firebase Auth

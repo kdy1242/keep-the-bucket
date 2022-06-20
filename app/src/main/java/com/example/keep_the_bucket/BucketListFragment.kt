@@ -28,7 +28,7 @@ class BucketListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         bucketListFragment = inflater.inflate(R.layout.fragment_bucket_list, container, false)
         return bucketListFragment
     }
