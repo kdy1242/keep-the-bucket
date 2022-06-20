@@ -15,11 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <!--<activity android:name=".HomeMainFragment" /> -->
-        <activity android:name=".DiaryActivity" />
-        <activity android:name=".JoinActivity" />
-<!--        <activity android:name=".LoginActivity" />-->
-        <activity android:name=".SlashActivity" /> <!-- <activity android:name=".MainActivity"></activity> -->
-        <activity android:name=".LoginActivity" />
+        <!--        <activity android:name=".DiaryActivity" />-->
+        <activity android:name=".JoinActivity"/>
+        <activity android:name=".DiaryActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity
+            android:name=".GoogleLoginAcitivty"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+<!--        <activity android:name=".SlashActivity" /> &lt;!&ndash; <activity android:name=".MainActivity"></activity> &ndash;&gt;-->
         <!--
          <activity android:name=".Home"
             android:exported="true">
@@ -33,15 +43,15 @@
         -->
         <!-- android:name=".Join" -->
         <!-- android:exported="false" /> -->
-        <activity
-            android:name=".MainActivity"
-            tools:ignore="Instantiatable">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--        <activity-->
+<!--            android:name=".DiaryActivity"-->
+<!--            tools:ignore="Instantiatable">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
     </application>
 
 </manifest>
