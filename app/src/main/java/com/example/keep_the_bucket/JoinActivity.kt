@@ -75,4 +75,20 @@ class JoinActivity : AppCompatActivity() {
             )
         }
     }
+
+    data class List(
+        var title: String? = "",
+        var startDate: String? = "",
+        var endDate: String? = "",
+    ){
+        @Exclude
+        fun toMap(): Map<String, Any?>{
+            return mapOf(
+                "title" to title,
+                "startDate" to startDate,
+                "endDate" to endDate
+            )
+        }
+    }
+
 }
