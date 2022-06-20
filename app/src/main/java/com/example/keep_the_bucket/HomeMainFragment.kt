@@ -9,11 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_home_main.*
 
 
 class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
 
-    lateinit var BingoListAdapter: BingoListAdapter
+    lateinit var bingoListAdapter: BingoListAdapter
     val listdatas = mutableListOf<BingoListData>()
     lateinit var homeMainFriendsListAdapter: HomeMainFriendsAdapter
     val friendsdatas = mutableListOf<HomeMainFriendsData>()
@@ -32,8 +33,8 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
         val recyclerViewBingoList: RecyclerView = view.findViewById(R.id.recyclerView_MyBingoList)
         val recyclerViewFriendsList: RecyclerView = view.findViewById(R.id.recyclerView_FriendsList)
 
-        BingoListAdapter = BingoListAdapter(requireContext())
-        recyclerViewBingoList.adapter = BingoListAdapter
+        bingoListAdapter = BingoListAdapter(requireContext())
+        recyclerViewBingoList.adapter = bingoListAdapter
 
         homeMainFriendsListAdapter = HomeMainFriendsAdapter(requireContext())
         recyclerViewFriendsList.adapter = homeMainFriendsListAdapter
@@ -45,8 +46,8 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
             add(BingoListData(check = "테스트", setChecked = false))
             add(BingoListData(check = "테스트", setChecked = false))
 
-            BingoListAdapter.datas = listdatas
-            BingoListAdapter.notifyDataSetChanged()
+            bingoListAdapter.datas = listdatas
+            bingoListAdapter.notifyDataSetChanged()
 
 
             Log.d("test", "list test home")
@@ -65,5 +66,19 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        my_bingo_list.setOnClickListener {
+            replaceFragment(BucketListFragment())
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            replace(R.id.fragment_container, fragment)
+            commit()
+        }
+    }
 }
 
