@@ -17,6 +17,8 @@ import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 
 class GoogleLoginAcitivty : AppCompatActivity(), View.OnClickListener {
+
+
     //firebase Auth
     private lateinit var firebaseAuth: FirebaseAuth
     //google client
@@ -83,11 +85,11 @@ class GoogleLoginAcitivty : AppCompatActivity(), View.OnClickListener {
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.w("GoogleLoginActivity", "firebaseAuthWithGoogle 성공", task.exception)
+                    Log.w("LoginActivity", "firebaseAuthWithGoogle 성공", task.exception)
                     toMainActivity(firebaseAuth?.currentUser)
                 } else {
-                    Log.w("GoogleLoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
-                    Toast.makeText(baseContext, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
+                    Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
+                    Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
                 }
             }
     }// firebaseAuthWithGoogle END
