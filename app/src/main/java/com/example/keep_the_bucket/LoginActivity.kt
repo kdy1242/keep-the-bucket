@@ -2,7 +2,10 @@ package com.example.keep_the_bucket
 
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -31,6 +34,21 @@ class LoginActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.password)
         val btn = findViewById<Button>(R.id.btn)
         val join = findViewById<Button>(R.id.join)
+
+        password.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+            override fun afterTextChanged(editable: Editable) {
+                if (editable.length > 0) {
+                    btn.setClickable(true)
+                    btn.setBackgroundResource(R.drawable.login_btn_after)
+                    btn.setTextColor(Color.WHITE)
+                } else {
+                    btn.setClickable(false)
+                    btn.setBackgroundResource(R.drawable.login_btn_befor)
+                }
+            }
+        })
 
         btn.setOnClickListener{
             signinEmail()
