@@ -15,7 +15,7 @@ class SlashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
 
             // 일정 시간이 지나면 MainActivity로 이동
-            val intent= Intent( this,Login::class.java)
+            val intent= Intent( this,LoginActivity::class.java)
             startActivity(intent)
 
             // 이전 키를 눌렀을 때 스플래스 스크린 화면으로 이동을 방지하기 위해
