@@ -96,15 +96,14 @@ class DiaryActivity : AppCompatActivity() {
         val uploadTask = imageRef.putFile(uri)
 
         //4. 업로드 실행 및 결과 확인
-        uploadTask.addOnFailureListener {
+        uploadTask.addOnFailureListener{
             Log.d("스토리지", "실패=>${it.message}")
-        }.addOnSuccessListener { taskSnapshot ->
+        }.addOnSuccessListener {taskSnapshot ->
             Log.d("스토리지", "성공 주소=>${fullPath}") //5. 경로를 DB에 저장하고 사용
         }
     }
-
     fun makeFilePath(path: String, userId: String, uri: Uri): String {
-        val mimeType = contentResolver.getType(uri) ?: "/none"
+        val mimeType = contentResolver.getType(uri)?:"/none"
         val ext = mimeType.split("/")[1]
         val timeSuffix = System.currentTimeMillis()
         val filename = "${path}/${userId}_${timeSuffix}.${ext}"

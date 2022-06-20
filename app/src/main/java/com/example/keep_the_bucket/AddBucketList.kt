@@ -52,7 +52,7 @@ class AddBucketList : AppCompatActivity() {
 
                 val titleKey = title.text.toString().replace(" ", "");
 
-                var list = Join.List(title.text.toString(), startDate.text.toString(), endDate.text.toString())
+                var list = JoinActivity.List(title.text.toString(), startDate.text.toString(), endDate.text.toString())
 
                 myRef.child(key).child(titleKey).setValue(list);
 

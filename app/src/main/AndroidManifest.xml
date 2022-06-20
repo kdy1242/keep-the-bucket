@@ -17,8 +17,9 @@
         <!--<activity android:name=".HomeMainFragment" /> -->
         <activity android:name=".DiaryActivity" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".LoginActivity" />
+<!--        <activity android:name=".LoginActivity" />-->
         <activity android:name=".SlashActivity" /> <!-- <activity android:name=".MainActivity"></activity> -->
+        <activity android:name=".LoginActivity" />
         <!--
          <activity android:name=".Home"
             android:exported="true">

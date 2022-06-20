@@ -5,15 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class FriendsListAdapter(private val context: Context) : RecyclerView.Adapter<FriendsListAdapter.ViewHolder>(){
-    var datas = mutableListOf<FriendsListData>()
+class FriendsListAdapter(private val context: Context) : RecyclerView.Adapter<FriendsListAdapter.ViewHolder>() {
 
+    var datas = mutableListOf<FriendsListData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.friend_list,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.friend_list,parent,false)
         return ViewHolder(view)
     }
 
@@ -25,14 +27,16 @@ class FriendsListAdapter(private val context: Context) : RecyclerView.Adapter<Fr
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val imgProfile: ImageView = itemView.findViewById(R.id.profileImg)
-        private val nameProfile: TextView = itemView.findViewById(R.id.profileName)
-        private val idProile: TextView = itemView.findViewById(R.id.profileEmail)
+        private val profileImg: ImageView = itemView.findViewById(R.id.profileImg)
+        private val profileName: TextView = itemView.findViewById(R.id.profileName)
+        private val profileEmail: TextView = itemView.findViewById(R.id.profileEmail)
 
         fun bind(item: FriendsListData) {
-            Glide.with(context).load(item.img).into(imgProfile)
-            nameProfile.text = item.name
-            idProile.text = item.email
+            Glide.with(context).load(item.img).into(profileImg)
+            profileName.text = item.name
+            profileEmail.text = item.email
         }
     }
+
+
 }

@@ -7,15 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.ViewFlipper
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_users.*
 
 
 class UsersFragment : Fragment(R.layout.fragment_users) {
+
+    lateinit var friendsListAdapter: FriendsListAdapter
+    val datas = mutableListOf<FriendsListData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,34 +28,30 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_users, container, false)
-        val userstaball : LinearLayout = view.findViewById(R.id.users_tab_all)
-        val userstabshare : LinearLayout = view.findViewById(R.id.users_tab_share)
-        val userstaballtext : TextView = view.findViewById(R.id.users_tab_all_text)
-        val usertabsharetext : TextView = view.findViewById(R.id.users_tab_share_text)
-        val userstaballview :View = view.findViewById(R.id.users_tab_all_view)
-        val usertabshareview :View = view.findViewById(R.id.users_tab_share_view)
-        val viewFlipper : ViewFlipper = view.findViewById(R.id.users_viewflipper)
-        val userssearchimg : ImageView = view.findViewById(R.id.users_search_img)
-
-        userstaball.setOnClickListener(){
-            userstaballtext.setTextColor(Color.parseColor("#F8BAA0"))
-            usertabsharetext.setTextColor(Color.parseColor("#868686"))
-            userstaballview.visibility = View.VISIBLE
-            usertabshareview.visibility = View.INVISIBLE
-            viewFlipper.displayedChild = 0
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        val spinner : Spinner = view.findViewById(R.id.spinner)
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.itemList,
+            R.layout.spinner_list
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(R.layout.spinner_list)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
         }
 
-        userstabshare.setOnClickListener(){
-            userstaballtext.setTextColor(Color.parseColor("#868686"))
-            usertabsharetext.setTextColor(Color.parseColor("#F8BAA0"))
-            userstaballview.visibility = View.INVISIBLE
-            usertabshareview.visibility = View.VISIBLE
-            viewFlipper.displayedChild = 1
-        }
+        friendsListAdapter = FriendsListAdapter(requireContext())
+        recyclerView.adapter = friendsListAdapter
 
-        userssearchimg.setOnClickListener(){
-            val intent = Intent(activity, SearchUserActivity::class.java)
-            startActivity(intent)
+
+        datas.apply {
+            add(FriendsListData(img = R.drawable.test_img1, name = "테스트", email = "nhsally@naver.com"))
+            add(FriendsListData(img = R.drawable.test_img1, name = "테스트2", email = "nhsally@naver.com"))
+
+            friendsListAdapter.datas = datas
+            friendsListAdapter.notifyDataSetChanged()
+
         }
 
         return view

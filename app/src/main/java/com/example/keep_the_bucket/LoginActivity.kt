@@ -3,8 +3,7 @@ package com.example.keep_the_bucket
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -33,22 +32,6 @@ class LoginActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.btn)
         val join = findViewById<Button>(R.id.join)
 
-
-        password.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
-            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
-            override fun afterTextChanged(editable: Editable) {
-                if (editable.length > 0) {
-                    btn.setClickable(true)
-                    btn.setBackgroundResource(R.drawable.login_btn_after)
-//                    btn.setTextColor(Color.WHITE)
-                } else {
-                    btn.setClickable(false)
-                    btn.setBackgroundResource(R.drawable.login_btn_befor)
-                }
-            }
-        })
-
         btn.setOnClickListener{
             signinEmail()
         }
@@ -64,6 +47,7 @@ class LoginActivity : AppCompatActivity() {
                     task ->
                 if(task.isSuccessful) {
                     // Login, 아이디와 패스워드가 맞았을 때
+                    Log.d("test", "로그인 테스트")
                     val id = email.text.toString().replace(".", "")
                     database = database.child(id)
                     database.get().addOnSuccessListener {
