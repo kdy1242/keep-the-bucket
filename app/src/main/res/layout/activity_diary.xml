@@ -72,10 +72,10 @@
         android:id="@+id/diary_contents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/diary_title_txt"
-        app:layout_constraintStart_toStartOf="@id/diary_title_txt"
         android:layout_marginTop="24dp"
-        android:text="test txt" />
+        android:text="test txt"
+        app:layout_constraintStart_toStartOf="@id/diary_title_txt"
+        app:layout_constraintTop_toBottomOf="@id/diary_title_txt" />
 
     <Button
         android:id="@+id/diary_save"
