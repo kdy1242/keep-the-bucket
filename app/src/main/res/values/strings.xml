@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">keep-the-bucket</string>
+    <string name="app_name">Keep The Bucket</string>
     <string name="bold">메일에서 <b>인증번호</b>를 확인해주세요</string>
     <string name="consent_bold"><b>이용약관</b>에 \n동의해주세요</string>
     <!-- TODO: Remove or change this placeholder text -->
