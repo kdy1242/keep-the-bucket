@@ -1,7 +1,6 @@
 package com.example.keep_the_bucket
 
 import android.Manifest
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +15,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_diary.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class DiaryActivity : AppCompatActivity() {
@@ -35,6 +36,10 @@ class DiaryActivity : AppCompatActivity() {
 
         val bingoNum = intent.getIntExtra("bingoNum",1)
 
+        val nowTime = System.currentTimeMillis()
+        val nowTimeDate = Date(nowTime)
+        val timeDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("en", "EN"))
+
         binding.diaryImg.setOnClickListener {
             permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
         }
@@ -42,8 +47,9 @@ class DiaryActivity : AppCompatActivity() {
             var diaryModel = DiaryModel()
             diaryModel.num = bingoNum
             diaryModel.uid = auth?.currentUser?.uid
-//            diaryModel.ImgUrl = uploadImage(uri).toString()
+            diaryModel.title = diary_title_txt.text.toString()
             diaryModel.diary_cont = diary_contents.text.toString()
+            diaryModel.timestamp = timeDateFormat.format(nowTimeDate)
             diaryModel.ImgUrl = imageUri
 
             fbFirestore?.collection("diary")?.document()?.set(diaryModel)
@@ -53,8 +59,7 @@ class DiaryActivity : AppCompatActivity() {
         }
 
         binding.backBtn.setOnClickListener {
-            val intent = Intent(this, BingoFragment::class.java)
-            startActivity(intent)
+            finish()
         }
 
     }
@@ -84,9 +89,9 @@ class DiaryActivity : AppCompatActivity() {
             Log.d("스토리지", "실패=>${it.message}")
         }.addOnSuccessListener {taskSnapshot ->
             Log.d("스토리지", "성공 주소=>${fullPath}") //5. 경로를 DB에 저장하고 사용
-            imageUri = fullPath
+            imageUri = uri.toString()
             Glide.with(this)
-                .load(uri)
+                .load(imageUri)
                 .into(diary_img)
         }
     }
