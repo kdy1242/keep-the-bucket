@@ -17,7 +17,7 @@ class BingoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentBingoBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -26,6 +26,21 @@ class BingoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bingo1.setOnClickListener(bClickLister)
+        bingo2.setOnClickListener(bClickLister)
+        bingo3.setOnClickListener(bClickLister)
+        bingo4.setOnClickListener(bClickLister)
+        bingo5.setOnClickListener(bClickLister)
+        bingo6.setOnClickListener(bClickLister)
+        bingo7.setOnClickListener(bClickLister)
+        bingo8.setOnClickListener(bClickLister)
+        bingo9.setOnClickListener(bClickLister)
+        bingo10.setOnClickListener(bClickLister)
+        bingo11.setOnClickListener(bClickLister)
+        bingo12.setOnClickListener(bClickLister)
+        bingo13.setOnClickListener(bClickLister)
+        bingo14.setOnClickListener(bClickLister)
+        bingo15.setOnClickListener(bClickLister)
+        bingo16.setOnClickListener(bClickLister)
     }
 
     val bClickLister : View.OnClickListener = View.OnClickListener{
@@ -79,8 +94,6 @@ class BingoFragment : Fragment() {
             R.id.bingo16 -> {
                 bingoNum = 16
             }
-
-
         }
         val intent = Intent(this.context,DiaryActivity::class.java)
         intent.putExtra("bingoNum",bingoNum)
