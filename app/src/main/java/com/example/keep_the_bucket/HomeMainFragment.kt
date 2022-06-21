@@ -40,8 +40,8 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
             parentFragmentManager.beginTransaction().replace(R.id.container, HomeShareListFragment()).commit()
         }
 
-        bingoListAdapter = BingoListAdapter(requireContext())
-        recyclerViewBingoList.adapter = bingoListAdapter
+//        bingoListAdapter = BingoListAdapter(bingo)
+//        recyclerViewBingoList.adapter = bingoListAdapter
 
         homeMainFriendsListAdapter = HomeMainFriendsAdapter(requireContext())
         recyclerViewFriendsList.adapter = homeMainFriendsListAdapter
@@ -49,17 +49,17 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
         recyclerViewFriendsList.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
-        listdatas.apply {
-            add(BingoListData(check = "테스트", setChecked = false))
-            add(BingoListData(check = "테스트", setChecked = false))
-
-            bingoListAdapter.datas = listdatas
-            bingoListAdapter.notifyDataSetChanged()
-
-
-            Log.d("test", "list test home")
-
-        }
+//        listdatas.apply {
+//            add(BingoListData(check = "테스트", setChecked = false))
+//            add(BingoListData(check = "테스트", setChecked = false))
+//
+//            bingoListAdapter.datas = listdatas
+//            bingoListAdapter.notifyDataSetChanged()
+//
+//
+//            Log.d("test", "list test home")
+//
+//        }
 
         friendsdatas.apply {
             add(HomeMainFriendsData(img = R.drawable.ic_add_bingo_img_btn, name = "테스트", check1 = "테스트1", setChecked1 = false, check2 = "테스트2", setChecked2 = true))
