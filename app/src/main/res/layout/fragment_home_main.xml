@@ -16,6 +16,7 @@
             android:layout_marginTop="16dp">
 
             <LinearLayout
+                android:id="@+id/mission"
                 android:layout_width="match_parent"
                 android:layout_height="98dp"
                 android:layout_marginLeft="18dp"
