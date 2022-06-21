@@ -59,8 +59,8 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
         friendsdatas.apply {
-            add(HomeMainFriendsData(img = R.drawable.ic_add_bingo_img_btn, name = "테스트", check1 = "테스트1", setChecked1 = false, check2 = "테스트2", setChecked2 = true))
-            add(HomeMainFriendsData(img = R.drawable.test_img1, name = "테스트", check1 = "테스트1", setChecked1 = false, check2 = "테스트2", setChecked2 = true))
+            add(HomeMainFriendsData(img = R.drawable.hyo, name = "김효정", check1 = "가족들과 해외여행", setChecked1 = true, check2 = "취업하기", setChecked2 = true))
+            add(HomeMainFriendsData(img = R.drawable.hong, name = "홍해인", check1 = "옷입기", setChecked1 = true, check2 = "결혼하기", setChecked2 = false))
 
             homeMainFriendsListAdapter.datas = friendsdatas
             homeMainFriendsListAdapter.notifyDataSetChanged()
