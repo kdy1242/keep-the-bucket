@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.keep_the_bucket.databinding.ActivityDiaryBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -55,6 +56,7 @@ class DiaryActivity : AppCompatActivity() {
             val intent = Intent(this, BingoFragment::class.java)
             startActivity(intent)
         }
+
     }
     val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -83,6 +85,9 @@ class DiaryActivity : AppCompatActivity() {
         }.addOnSuccessListener {taskSnapshot ->
             Log.d("스토리지", "성공 주소=>${fullPath}") //5. 경로를 DB에 저장하고 사용
             imageUri = fullPath
+            Glide.with(this)
+                .load(uri)
+                .into(diary_img)
         }
     }
     fun makeFilePath(path: String, userId: String, uri: Uri): String {
