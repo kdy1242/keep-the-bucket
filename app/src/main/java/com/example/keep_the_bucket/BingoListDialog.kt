@@ -15,6 +15,9 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_diary.*
 import kotlinx.android.synthetic.main.dialog_bingo_list.*
+import java.sql.Timestamp
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BingoListDialog(context: Context,) : Dialog(context) {
 
@@ -41,9 +44,14 @@ class BingoListDialog(context: Context,) : Dialog(context) {
         ok_btn.setOnClickListener {
             Log.d("test", "ok_btn.setOnClickListener")
             val bingoListModel = BingoListModel()
+            val nowTime = System.currentTimeMillis()
+            val nowTimeDate = Date(nowTime)
+            val timeDateFormat = SimpleDateFormat("yyyy-MM-dd kk:mm:ss", Locale("ko", "KR"))
+
             bingoListModel.uid = auth?.currentUser?.uid
             bingoListModel.bingoList = bingo_list_text.text.toString()
-            bingoListModel.check = false
+            bingoListModel.isChecked = false
+            bingoListModel.timestamp = timeDateFormat.format(nowTimeDate)
 
             fbFirestore?.collection("bingo_list")?.document()?.set(bingoListModel)
             Toast.makeText(context, "업로드 중...", Toast.LENGTH_SHORT).show()
