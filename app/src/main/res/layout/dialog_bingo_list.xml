@@ -22,13 +22,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="10dp"
-            android:text="일정을 입력해주세요"
+            android:text="할 일을 입력해주세요"
             android:textStyle="bold"
             android:fontFamily="@font/notosanskr_bold"
             android:textColor="@color/main_orange" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/bingo_list_text"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -46,7 +46,7 @@
             android:layout_marginTop="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/bingo_list_text" />
 
         <TextView
             android:id="@+id/ok_btn"
@@ -59,7 +59,7 @@
             android:textColor="@color/main_orange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/bingo_list_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
