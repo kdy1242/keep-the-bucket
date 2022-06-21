@@ -55,6 +55,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
             // 선택된 탭 버튼을 다시 선택할 때 이벤
             override fun onTabReselected(tab: TabLayout.Tab?) {
+                val transaction = parentFragmentManager.beginTransaction()
+                when(tab?.text) {
+                    "홈" -> transaction.replace(R.id.container, HomeMainFragment() )
+                    "내 리스트" -> transaction.replace(R.id.container, HomeMyListFragment() )
+                    "공유 리스트" -> transaction.replace(R.id.container, HomeShareListFragment() )
+                }
+                transaction.commit()
             }
         })
 

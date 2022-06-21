@@ -1,14 +1,17 @@
 package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.tabs.TabItem
 import kotlinx.android.synthetic.main.fragment_home_main.*
 
 
@@ -32,6 +35,11 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
         val view = inflater.inflate(R.layout.fragment_home_main, container, false)
         val recyclerViewBingoList: RecyclerView = view.findViewById(R.id.recyclerView_MyBingoList)
         val recyclerViewFriendsList: RecyclerView = view.findViewById(R.id.recyclerView_FriendsList)
+        val mission: LinearLayout = view.findViewById(R.id.mission)
+
+        mission.setOnClickListener{
+            parentFragmentManager.beginTransaction().replace(R.id.container, HomeShareListFragment()).commit()
+        }
 
         bingoListAdapter = BingoListAdapter(requireContext())
         recyclerViewBingoList.adapter = bingoListAdapter

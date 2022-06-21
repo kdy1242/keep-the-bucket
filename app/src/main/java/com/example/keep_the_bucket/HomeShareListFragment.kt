@@ -48,8 +48,7 @@ class HomeShareListFragment : Fragment(R.layout.fragment_home_share_list) {
 
 
         datas.apply {
-            add(HomeShareListData(title = "공유 리스트 테스트", date = "20.03.04 - 23.04.23", people = 2, time = "39분 전 수정됨"))
-            add(HomeShareListData(title = "테스트2", date = "20.04.12 - 22.04.12", people = 3, time = "1시간 전 수정됨"))
+            add(HomeShareListData(title = "여름 미션", date = "22.06.01 - 22.08.31", people = 1, time = "1시간 전 수정됨"))
 
             homeShareListAdapter.datas = datas
             homeShareListAdapter.notifyDataSetChanged()
