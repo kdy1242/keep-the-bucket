@@ -68,7 +68,6 @@ class BingoListFragment : Fragment(R.layout.fragment_bingo_list) {
                     }
                 }
                 bingoListAdapter.notifyDataSetChanged()
-
             }
         return view
     }
