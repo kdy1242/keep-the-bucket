@@ -53,9 +53,8 @@ class DiaryActivity : AppCompatActivity() {
             diaryModel.ImgUrl = imageUri
 
             fbFirestore?.collection("diary")?.document()?.set(diaryModel)
-//            val intent = Intent(this, BingoFragment::class.java)
-//            startActivity(intent)
             Toast.makeText(this, "저장완료", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
         binding.backBtn.setOnClickListener {
