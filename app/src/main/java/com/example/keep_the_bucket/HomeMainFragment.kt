@@ -1,7 +1,6 @@
 package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,7 +10,7 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.tabs.TabItem
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_home_main.*
 
 
