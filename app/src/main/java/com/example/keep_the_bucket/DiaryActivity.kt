@@ -1,7 +1,6 @@
 package com.example.keep_the_bucket
 
 import android.Manifest
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -60,8 +59,7 @@ class DiaryActivity : AppCompatActivity() {
         }
 
         binding.backBtn.setOnClickListener {
-            val intent = Intent(this, BingoFragment::class.java)
-            startActivity(intent)
+            finish()
         }
 
     }
