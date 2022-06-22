@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -41,8 +42,9 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
         val view = inflater.inflate(R.layout.fragment_home_my_list, container, false)
         val spinner : Spinner = view.findViewById(R.id.spinner)
         val addList: ImageView = view.findViewById(R.id.addList)
-
         recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.setHasFixedSize(true)
 
         homeMyListArray = ArrayList<HomeMyListData>()
 
@@ -50,21 +52,9 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
 
         recyclerView.adapter = homeMyListAdapter
 
-        ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.itemList,
-            R.layout.spinner_list
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(R.layout.spinner_list)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
-        }
-
         fbFirestore = FirebaseFirestore.getInstance()
         fbFirestore.collection("list")
             .whereEqualTo("uid", auth.uid)
-            .orderBy("endDate", Query.Direction.DESCENDING)
             .addSnapshotListener { value, error ->
                 Log.d("test", "addSnapshotListener")
                 if (value != null) {
@@ -86,6 +76,17 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
                 }
                 homeMyListAdapter.notifyDataSetChanged()
             }
+
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.itemList,
+            R.layout.spinner_list
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(R.layout.spinner_list)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
 
         addList.setOnClickListener{
             val intent = Intent(requireContext(), AddBucketList::class.java)
