@@ -20,7 +20,7 @@
         <activity android:name=".JoinActivity"/>
         <activity android:name=".DiaryActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".SlashActivity"/>
         <activity
             android:name=".GoogleLoginActivity"
             tools:ignore="Instantiatable">
