@@ -21,7 +21,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home_my_list.*
 
 class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
-    lateinit var recyclerView: RecyclerView
+    lateinit var myListRecyclerView: RecyclerView
     lateinit var homeMyListAdapter: HomeMyListAdapter
     lateinit var homeMyListArray: ArrayList<HomeMyListData>
     lateinit var fbFirestore : FirebaseFirestore
@@ -42,15 +42,15 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
         val view = inflater.inflate(R.layout.fragment_home_my_list, container, false)
         val spinner : Spinner = view.findViewById(R.id.spinner)
         val addList: ImageView = view.findViewById(R.id.addList)
-        recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.setHasFixedSize(true)
+        myListRecyclerView = view.findViewById(R.id.myListRecyclerView)
+        myListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        myListRecyclerView.setHasFixedSize(true)
 
         homeMyListArray = ArrayList<HomeMyListData>()
 
         homeMyListAdapter = HomeMyListAdapter(homeMyListArray)
 
-        recyclerView.adapter = homeMyListAdapter
+        myListRecyclerView.adapter = homeMyListAdapter
 
         fbFirestore = FirebaseFirestore.getInstance()
         fbFirestore.collection("list")

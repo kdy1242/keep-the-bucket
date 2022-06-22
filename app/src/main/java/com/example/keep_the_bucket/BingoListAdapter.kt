@@ -1,6 +1,5 @@
 package com.example.keep_the_bucket
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,7 @@ class BingoListAdapter(private val bingoList: ArrayList<BingoListModel>) : Recyc
 
     override fun getItemCount(): Int = bingoList.size
 
-    override fun onBindViewHolder(holder: BingoListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val bingoList : BingoListModel = bingoList[position]
         holder.check.text = bingoList.bingoList
