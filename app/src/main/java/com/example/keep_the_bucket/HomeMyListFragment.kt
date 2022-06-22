@@ -43,7 +43,7 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
         val spinner : Spinner = view.findViewById(R.id.spinner)
         val addList: ImageView = view.findViewById(R.id.addList)
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
 
         homeMyListArray = ArrayList<HomeMyListData>()
@@ -67,12 +67,10 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
                                 dc["title"] as String,
                                 dc["startDate"] as String,
                                 dc["endDate"] as String,
-                                people = "1",
-                                time = "1시간 전 수정됨",
                             )
                         )
-                        Log.d("test", "$homeMyListArray")
                     }
+                    Log.d("test", "$homeMyListArray")
                 }
                 homeMyListAdapter.notifyDataSetChanged()
             }
