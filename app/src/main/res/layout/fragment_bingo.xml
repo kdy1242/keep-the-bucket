@@ -45,6 +45,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -70,6 +71,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -95,6 +97,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -120,6 +123,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -145,6 +149,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -170,6 +175,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -195,6 +201,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -220,6 +227,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -245,6 +253,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -270,6 +279,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -295,6 +305,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -320,6 +331,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -345,6 +357,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -370,6 +383,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -395,6 +409,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
@@ -420,6 +435,7 @@
                     android:layout_gravity="center"
                     android:maxWidth="30dp"
                     android:maxLines="3"
+                    android:ellipsize="end"
                     android:text="" />
             </FrameLayout>
 
