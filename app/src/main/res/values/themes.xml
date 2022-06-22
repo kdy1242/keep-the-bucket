@@ -29,4 +29,9 @@
         -->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/main_orange</item>
+        <item name="android:windowMinWidthMajor">85%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+    </style>
 </resources>

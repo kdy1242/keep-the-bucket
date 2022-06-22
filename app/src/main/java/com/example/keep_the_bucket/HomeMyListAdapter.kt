@@ -3,12 +3,14 @@ package com.example.keep_the_bucket
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeMyListAdapter(private val context: ArrayList<HomeMyListData>) : RecyclerView.Adapter<HomeMyListAdapter.ViewHolder>() {
+class HomeMyListAdapter(private val myList: ArrayList<HomeMyListData>) : RecyclerView.Adapter<HomeMyListAdapter.ViewHolder>() {
 
     var datas = mutableListOf<HomeMyListData>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_my_list,parent,false)
         return ViewHolder(view)
@@ -17,25 +19,22 @@ class HomeMyListAdapter(private val context: ArrayList<HomeMyListData>) : Recycl
     override fun getItemCount(): Int = datas.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(datas[position])
+        val myList : HomeMyListData = myList[position]
+
+        holder.title.text = myList.title
+        holder.startDate.text = myList.startDate
+        holder.endDate.text = myList.endDate
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    public class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val title: TextView = itemView.findViewById(R.id.listTitle)
-        private val startDate: TextView = itemView.findViewById(R.id.startDate)
-        private val endDate: TextView = itemView.findViewById(R.id.endDate)
-        private val people: TextView = itemView.findViewById(R.id.listPeople)
-        private val time: TextView = itemView.findViewById(R.id.time)
-
-        fun bind(item: HomeMyListData) {
-            title.text = item.title
-            startDate.text = item.startDate
-            endDate.text = item.endDate
-            people.text = item.people.toString()
-            time.text = item.time
-        }
+        val title: TextView = itemView.findViewById(R.id.listTitle)
+        val startDate: TextView = itemView.findViewById(R.id.startDate)
+        val endDate: TextView = itemView.findViewById(R.id.endDate)
     }
+
+
 
 
 }
+

@@ -67,12 +67,11 @@
                 android:src="@drawable/ic_select_tab_users"
                 android:tint="@color/text_gray" />
             <TextView
-                android:id="@+id/listPeople"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:fontFamily="@font/notosanskr_regular"
-                android:text="3"
+                android:text="1"
                 android:textColor="@color/text_gray"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -86,7 +85,6 @@
         android:paddingTop="8dp"
         android:paddingBottom="15dp">
         <TextView
-            android:id="@+id/listTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosanskr_regular"

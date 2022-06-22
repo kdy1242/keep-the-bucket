@@ -5,6 +5,4 @@ data class HomeMyListData(
     var title : String? = null,
     var startDate: String? = null,
     var endDate: String? = null,
-    var people: String? = null,
-    var time: String? = null,
 )

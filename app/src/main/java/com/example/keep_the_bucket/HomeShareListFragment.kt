@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.Spinner
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
@@ -15,8 +17,8 @@ import kotlinx.android.synthetic.main.fragment_home_my_list.*
 
 class HomeShareListFragment : Fragment(R.layout.fragment_home_share_list) {
 
-    lateinit var homeShareListAdapter: HomeShareListAdapter
-    val datas = mutableListOf<HomeShareListData>()
+//    lateinit var homeShareListAdapter: HomeShareListAdapter
+//    val datas = mutableListOf<HomeShareListData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,6 @@ class HomeShareListFragment : Fragment(R.layout.fragment_home_share_list) {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_share_list, container, false)
         val spinner : Spinner = view.findViewById(R.id.spinner)
-        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.itemList,
@@ -43,16 +44,45 @@ class HomeShareListFragment : Fragment(R.layout.fragment_home_share_list) {
             spinner.adapter = adapter
         }
 
-        homeShareListAdapter = HomeShareListAdapter(requireContext())
-        recyclerView.adapter = homeShareListAdapter
+        val spring_mission : LinearLayout = view.findViewById(R.id.spring_mission)
+        val summer_mission : LinearLayout = view.findViewById(R.id.summer_mission)
+        val autumn_mission : LinearLayout = view.findViewById(R.id.autumn_mission)
+        val winter_mission : LinearLayout = view.findViewById(R.id.winter_mission)
 
+        spring_mission.setOnClickListener{
+            val builder = AlertDialog.Builder(requireContext(),  R.style.MyAlertDialogStyle)
+            val dialogView = layoutInflater.inflate(R.layout.spring_mission, null)
 
-        datas.apply {
-            add(HomeShareListData(title = "여름 미션", date = "22.06.01 - 22.08.31", people = 1, time = "1시간 전 수정됨"))
+            builder.setView(dialogView).setNegativeButton("OK") { dialogInterface, i ->
+                /* 취소일 때 아무 액션이 없으므로 빈칸 */
+            }.show()
+        }
 
-            homeShareListAdapter.datas = datas
-            homeShareListAdapter.notifyDataSetChanged()
+        summer_mission.setOnClickListener{
+            val builder = AlertDialog.Builder(requireContext(),  R.style.MyAlertDialogStyle)
+            val dialogView = layoutInflater.inflate(R.layout.summer_mission, null)
 
+            builder.setView(dialogView).setNegativeButton("OK") { dialogInterface, i ->
+                /* 취소일 때 아무 액션이 없으므로 빈칸 */
+            }.show()
+        }
+
+        autumn_mission.setOnClickListener{
+            val builder = AlertDialog.Builder(requireContext(),  R.style.MyAlertDialogStyle)
+            val dialogView = layoutInflater.inflate(R.layout.autumn_mission, null)
+
+            builder.setView(dialogView).setNegativeButton("OK") { dialogInterface, i ->
+                /* 취소일 때 아무 액션이 없으므로 빈칸 */
+            }.show()
+        }
+
+        winter_mission.setOnClickListener{
+            val builder = AlertDialog.Builder(requireContext(),  R.style.MyAlertDialogStyle)
+            val dialogView = layoutInflater.inflate(R.layout.winter_mission, null)
+
+            builder.setView(dialogView).setNegativeButton("OK") { dialogInterface, i ->
+                /* 취소일 때 아무 액션이 없으므로 빈칸 */
+            }.show()
         }
 
         return view
