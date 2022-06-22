@@ -16,7 +16,7 @@ class HomeMyListAdapter(private val myList: ArrayList<HomeMyListData>) : Recycle
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = datas.size
+    override fun getItemCount(): Int = myList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val myList : HomeMyListData = myList[position]
@@ -33,8 +33,4 @@ class HomeMyListAdapter(private val myList: ArrayList<HomeMyListData>) : Recycle
         val endDate: TextView = itemView.findViewById(R.id.endDate)
     }
 
-
-
-
 }
-
