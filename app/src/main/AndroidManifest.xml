@@ -15,12 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:requestLegacyExternalStorage="true">
-        <!--<activity android:name=".HomeMainFragment" /> -->
-        <!--        <activity android:name=".DiaryActivity" />-->
         <activity android:name=".JoinActivity"/>
         <activity android:name=".DiaryActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".SlashActivity"/>
+        <activity android:name=".AddBucketList"/>
         <activity
             android:name=".GoogleLoginActivity"
             tools:ignore="Instantiatable">
@@ -30,29 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity android:name=".SlashActivity" /> &lt;!&ndash; <activity android:name=".MainActivity"></activity> &ndash;&gt;-->
-        <!--
-         <activity android:name=".Home"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Profile" /> <activity
-        -->
-        <!-- android:name=".Join" -->
-        <!-- android:exported="false" /> -->
-<!--        <activity-->
-<!--            android:name=".DiaryActivity"-->
-<!--            tools:ignore="Instantiatable">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
     </application>
 
 </manifest>

@@ -60,7 +60,7 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
 
         friendsdatas.apply {
             add(HomeMainFriendsData(img = R.drawable.hyo, name = "김효정", check1 = "가족들과 해외여행", setChecked1 = true, check2 = "취업하기", setChecked2 = true))
-            add(HomeMainFriendsData(img = R.drawable.hong, name = "홍해인", check1 = "옷입기", setChecked1 = true, check2 = "결혼하기", setChecked2 = false))
+            add(HomeMainFriendsData(img = R.drawable.hong, name = "홍해인", check1 = "IT쇼 전시하기", setChecked1 = true, check2 = "결혼하기", setChecked2 = false))
 
             homeMainFriendsListAdapter.datas = friendsdatas
             homeMainFriendsListAdapter.notifyDataSetChanged()
