@@ -11,7 +11,7 @@ class HomeShareListAdapter(private val context: Context) : RecyclerView.Adapter<
 
     var datas = mutableListOf<HomeShareListData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_my_list,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_my_list, parent,false)
         return ViewHolder(view)
     }
 

@@ -2,8 +2,8 @@ package com.example.keep_the_bucket
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +12,24 @@ import android.widget.ImageView
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home_my_list.*
 
 class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
-
+    lateinit var recyclerView: RecyclerView
     lateinit var homeMyListAdapter: HomeMyListAdapter
-    val datas = mutableListOf<HomeMyListData>()
+    lateinit var homeMyListArray: ArrayList<HomeMyListData>
+    lateinit var fbFirestore : FirebaseFirestore
+    lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        auth = Firebase.auth
     }
 
     @SuppressLint("ResourceAsColor")
@@ -33,8 +40,16 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_my_list, container, false)
         val spinner : Spinner = view.findViewById(R.id.spinner)
-        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         val addList: ImageView = view.findViewById(R.id.addList)
+
+        recyclerView = view.findViewById(R.id.recyclerView)
+
+        homeMyListArray = ArrayList<HomeMyListData>()
+
+        homeMyListAdapter = HomeMyListAdapter(homeMyListArray)
+
+        recyclerView.adapter = homeMyListAdapter
+
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.itemList,
@@ -46,18 +61,31 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
             spinner.adapter = adapter
         }
 
-        homeMyListAdapter = HomeMyListAdapter(requireContext())
-        recyclerView.adapter = homeMyListAdapter
-
-
-        datas.apply {
-            add(HomeMyListData(title = "테스트", date = "20.03.04 - 23.04.23", people = 2, time = "39분 전 수정됨"))
-            add(HomeMyListData(title = "테스트2", date = "20.04.12 - 22.04.12", people = 3, time = "1시간 전 수정됨"))
-
-            homeMyListAdapter.datas = datas
-            homeMyListAdapter.notifyDataSetChanged()
-
-        }
+        fbFirestore = FirebaseFirestore.getInstance()
+        fbFirestore.collection("list")
+            .whereEqualTo("uid", auth.uid)
+            .orderBy("endDate", Query.Direction.DESCENDING)
+            .addSnapshotListener { value, error ->
+                Log.d("test", "addSnapshotListener")
+                if (value != null) {
+                    homeMyListArray.clear()
+                    for(dc in value) {
+                        Log.d("test", "DocumentChange.Type.ADDED")
+                        homeMyListArray.add(
+                            HomeMyListData(
+                                dc["uid"] as String,
+                                dc["title"] as String,
+                                dc["startDate"] as String,
+                                dc["endDate"] as String,
+                                people = "1",
+                                time = "1시간 전 수정됨",
+                            )
+                        )
+                        Log.d("test", "$homeMyListArray")
+                    }
+                }
+                homeMyListAdapter.notifyDataSetChanged()
+            }
 
         addList.setOnClickListener{
             val intent = Intent(requireContext(), AddBucketList::class.java)
