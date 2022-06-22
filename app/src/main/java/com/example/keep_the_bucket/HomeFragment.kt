@@ -3,12 +3,12 @@ package com.example.keep_the_bucket
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
-import android.view.*
-import android.widget.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -60,7 +60,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 when(tab?.text) {
                     "홈" -> transaction.replace(R.id.container, HomeMainFragment() )
                     "내 리스트" -> transaction.replace(R.id.container, HomeMyListFragment() )
-                    "공유 리스트" -> transaction.replace(R.id.container, HomeShareListFragment() )
+                    "챌린지" -> transaction.replace(R.id.container, HomeShareListFragment() )
                 }
                 transaction.commit()
             }
