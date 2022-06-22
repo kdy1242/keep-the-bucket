@@ -11,13 +11,12 @@
         android:layout_marginLeft="50px"
         android:layout_marginRight="50px"
         tools:ignore="MissingConstraints">
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImg"
-            android:layout_width="160px"
-            android:layout_height="160px"
-            android:background="@drawable/round_friends_item"
-            android:backgroundTint="#848484">
-        </ImageView>
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/hong">
+        </de.hdodenhof.circleimageview.CircleImageView>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

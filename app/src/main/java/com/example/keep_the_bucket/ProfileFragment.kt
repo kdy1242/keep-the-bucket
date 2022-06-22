@@ -11,8 +11,6 @@ import android.widget.TextView
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
-    lateinit var dbHelper : DBHelper
-    lateinit var db : SQLiteDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,19 +26,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         val name : TextView = view.findViewById(R.id.name)
         val email : TextView = view.findViewById(R.id.email)
 
-        dbHelper = DBHelper(requireContext(), "newdb.db", null, 1)
-        db = dbHelper.writableDatabase
-
-        var query = "SELECT * FROM User;"
-
-        val cursor = db.rawQuery(query, null)
-
-        while(cursor.moveToNext()){
-            val dbemail = cursor.getString(0)
-            val dbname = cursor.getString(1)
-            name?.text = dbname;
-            email?.text = dbemail;
-        }
+        name?.text = "공도윤";
+        email?.text = "keepthebucket@gmail.com";
 
         return view
     }

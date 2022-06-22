@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_users.*
 
@@ -30,6 +31,21 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
         val view = inflater.inflate(R.layout.fragment_users, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         val spinner : Spinner = view.findViewById(R.id.spinner)
+
+        friendsListAdapter = FriendsListAdapter(requireContext())
+        recyclerView.adapter = friendsListAdapter
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        datas.apply {
+            datas.clear()
+            add(FriendsListData(img =  R.drawable.hyo, name = "김효정", email = "w2029@e-mirim.hs.kr"))
+            add(FriendsListData(img =  R.drawable.hong, name = "홍해인", email = "w2020@e-mirim.hs.kr"))
+
+            friendsListAdapter.datas = datas
+            friendsListAdapter.notifyDataSetChanged()
+        }
+
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.itemList,
@@ -39,19 +55,6 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
             adapter.setDropDownViewResource(R.layout.spinner_list)
             // Apply the adapter to the spinner
             spinner.adapter = adapter
-        }
-
-        friendsListAdapter = FriendsListAdapter(requireContext())
-        recyclerView.adapter = friendsListAdapter
-
-
-        datas.apply {
-            add(FriendsListData(img = R.drawable.test_img1, name = "테스트", email = "nhsally@naver.com"))
-            add(FriendsListData(img = R.drawable.test_img1, name = "테스트2", email = "nhsally@naver.com"))
-
-            friendsListAdapter.datas = datas
-            friendsListAdapter.notifyDataSetChanged()
-
         }
 
         return view
