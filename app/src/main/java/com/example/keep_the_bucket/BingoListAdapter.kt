@@ -24,7 +24,7 @@ class BingoListAdapter(private val bingoList: ArrayList<BingoListModel>) : Recyc
 
         val bingoList : BingoListModel = bingoList[position]
         holder.check.text = bingoList.bingoList
-        holder.check.isChecked = bingoList.isChecked == false
+        holder.check.isChecked = bingoList.isChecked
 
     }
 
