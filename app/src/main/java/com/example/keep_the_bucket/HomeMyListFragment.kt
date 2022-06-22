@@ -69,8 +69,9 @@ class HomeMyListFragment : Fragment(R.layout.fragment_home_my_list) {
                                 dc["endDate"] as String,
                             )
                         )
+                        Log.d("test", "$homeMyListArray")
                     }
-                    Log.d("test", "$homeMyListArray")
+
                 }
                 homeMyListAdapter.notifyDataSetChanged()
             }
