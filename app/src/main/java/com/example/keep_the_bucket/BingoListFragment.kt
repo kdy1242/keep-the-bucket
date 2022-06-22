@@ -64,11 +64,19 @@ class BingoListFragment : Fragment(R.layout.fragment_bingo_list) {
                                 dc["bingoList"] as String,
                             )
                         )
-                        Log.d("test", "$bingoListArray")
+                        Log.d("test", bingoListArray[0].bingoList)
                     }
                 }
                 bingoListAdapter.notifyDataSetChanged()
             }
+//
+//        val bingoFragment = BingoFragment()
+//        val bundle = Bundle()
+//        for ( i in 0..bingoListArray.size) {
+//            bundle.putString("bingoList", bingoListArray[i].bingoList)
+//        }
+//        bingoFragment.arguments = bundle
+//        activity?.supportFragmentManager!!.beginTransaction().add(R.id.fragment_container, bingoFragment).commit()
         return view
     }
 

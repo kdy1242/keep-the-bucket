@@ -54,7 +54,7 @@ class BingoListDialog(context: Context,) : Dialog(context) {
             bingoListModel.timestamp = timeDateFormat.format(nowTimeDate)
 
             fbFirestore?.collection("bingo_list")?.document()?.set(bingoListModel)
-            Toast.makeText(context, "업로드 중...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "등록 완료", Toast.LENGTH_SHORT).show()
             dismiss()
         }
         cancel_btn.setOnClickListener {
