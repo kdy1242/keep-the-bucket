@@ -1,7 +1,6 @@
 package com.example.keep_the_bucket
 
 import android.Manifest
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -41,19 +40,21 @@ class DiaryActivity : AppCompatActivity() {
 //        uid = FirebaseAuth.getInstance().currentUser?.uid
 //        firestore = FirebaseFirestore.getInstance()
 
+        Log.i("TAG", "onCreate: 다이어리 추가하기")
 
         val bingoNum = intent.getIntExtra("bingoNum",1)
+        val bingoId = intent.getStringExtra("bingoID")
 
-        val data = fbFirestore?.collection("diary")?.whereEqualTo("num", bingoNum)?.get()?.addOnSuccessListener { result ->
-            if(!result.isEmpty) {
-                val num = result.first().getLong("num")
-                Log.d("mytag", num.toString())
-                val intent = Intent(this,DiaryResultActivity::class.java)
-                intent.putExtra("bingoNum",num)
-                startActivity(intent)
-                finish()
-            }
-        }
+//        val data = fbFirestore?.collection("diary")?.whereEqualTo("num", bingoNum)?.get()?.addOnSuccessListener { result ->
+//            if(!result.isEmpty) {
+//                val num = result.first().getString("diary_cont")
+//                Log.d("mytag", num.toString())
+//                val intent = Intent(this,DiaryResultActivity::class.java)
+//                intent.putExtra("bingoNum",num)
+//                startActivity(intent)
+//                finish()
+//            }
+//        }
 
         val nowTime = System.currentTimeMillis()
         val nowTimeDate = Date(nowTime)
@@ -71,7 +72,14 @@ class DiaryActivity : AppCompatActivity() {
             diaryModel.timestamp = timeDateFormat.format(nowTimeDate)
             diaryModel.ImgUrl = imageUri
 
-            fbFirestore?.collection("diary")?.document()?.set(diaryModel)
+            // 빙고리스트 수정
+            val diaryID = System.currentTimeMillis().toString() //자동아이디 생성
+                fbFirestore?.collection("diary")?.document(diaryID)?.set(diaryModel)?.addOnSuccessListener {
+                if (bingoId != null) {
+                    fbFirestore?.collection("bingo_list")?.document(bingoId)?.update("diaryUID",diaryID)
+                }
+            }
+
             Toast.makeText(this, "저장완료", Toast.LENGTH_SHORT).show()
             finish()
         }
@@ -83,6 +91,7 @@ class DiaryActivity : AppCompatActivity() {
     }
     val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            Log.i("TAG", "승인: "+uri)
             uploadImage(uri)
         }
     var permissionLauncher =
@@ -102,16 +111,20 @@ class DiaryActivity : AppCompatActivity() {
         //3. 업로드 태스크 생성
         val uploadTask = imageRef.putFile(uri)
 
+        Log.i("TAG", "uploadImage: 이미지"+uploadTask)
         //4. 업로드 실행 및 결과 확인
         uploadTask.addOnFailureListener{
             Log.d("스토리지", "실패=>${it.message}")
         }.addOnSuccessListener {taskSnapshot ->
-            Log.d("스토리지", "성공 주소=>${fullPath}") //5. 경로를 DB에 저장하고 사용
-            imageUri = uri.toString()
+            imageRef.downloadUrl.addOnSuccessListener {
+                Log.d("스토리지", "성공 주소=>${it}") //5. 경로를 DB에 저장하고 사용
+                imageUri = it.toString()
 
-            Glide.with(this)
-                .load(imageUri)
-                .into(diary_img)
+                Glide.with(this.applicationContext)
+                    .load(imageUri)
+                    .placeholder(R.drawable.ic_bingo_img)
+                    .into(diary_img)
+            }
         }
     }
     fun makeFilePath(path: String, userId: String, uri: Uri): String {

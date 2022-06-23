@@ -10,7 +10,6 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -86,11 +85,18 @@ class HomeMainFragment : Fragment(R.layout.fragment_home_main) {
                     bingoListArray.clear()
                     for(dc in value) {
                         Log.d("test", "DocumentChange.Type.ADDED")
+                        var diary = ""
+                        if(dc["diaryUID"] !is String){
+                            diary = ""
+                        }else{
+                            diary = dc["diaryUID"].toString()
+                        }
                         bingoListArray.add(
                             BingoListModel(
                                 dc["uid"] as String,
                                 dc["checked"] as Boolean,
                                 dc["bingoList"] as String,
+                                diaryUID =  diary
                             )
                         )
                         Log.d("test", "$bingoListArray")

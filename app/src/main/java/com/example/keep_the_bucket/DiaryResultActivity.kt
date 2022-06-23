@@ -1,6 +1,5 @@
 package com.example.keep_the_bucket
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -17,29 +16,29 @@ class DiaryResultActivity : AppCompatActivity() {
         binding = ActivityDiaryResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bingoNum = intent.getIntExtra("bingoNum",1)
+        val diaryID = intent.getStringExtra("diaryID")
 
+        if (diaryID != null) {
+            db.collection("diary").document(diaryID).get()
+                .addOnSuccessListener { // it: DocumentSnapshot
+                    binding.diaryDateTxt.setText(it["timestamp"].toString())
+                    binding.diaryTitleTxt.setText(it["title"].toString())
+                    binding.diaryContents.setText(it["diary_cont"].toString())
+
+                    if (it["imgUrl"] as String? != null){
+                        Log.i("TAG", "onCreate: 사진 결과 "+it["imgUrl"])
+                        Glide.with(this)
+                            .load(it["imgUrl"] as String)
+                            .into(binding.diaryImg)
+                    }
+                }.addOnFailureListener {
+                    Log.d("db","저장을 하지 못했습니다.")
+                }
+        }
         binding.backBtn.setOnClickListener {
-            val intent = Intent(this,BingoFragment::class.java)
-            startActivity(intent)
+            finish()
         }
 
-    }
-
-    private fun queryItem(bingoNum: String) {
-
-        db.document(bingoNum.toString()).get()
-            .addOnSuccessListener { // it: DocumentSnapshot
-                Glide.with(this)
-                    .load(it["imgUrl"] as String)
-                    .into(binding.diaryImg)
-                binding.diaryDateTxt.setText(it["timestamp"].toString())
-                binding.diaryTitleTxt.setText(it["title"].toString())
-                binding.diaryContents.setText(it["diary_cont"].toString())
-
-            }.addOnFailureListener {
-                Log.d("db","저장을 하지 못했습니다.")
-            }
     }
 
 }

@@ -2,22 +2,18 @@ package com.example.keep_the_bucket
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.*
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_bingo_list.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 class BingoListFragment : Fragment(R.layout.fragment_bingo_list) {
     lateinit var recyclerView: RecyclerView
@@ -57,16 +53,24 @@ class BingoListFragment : Fragment(R.layout.fragment_bingo_list) {
                     bingoListArray.clear()
                     for(dc in value) {
                         Log.d("test", "DocumentChange.Type.ADDED")
+                        var diary = ""
+                        if(dc["diaryUID"] !is String){
+                            diary = ""
+                        }else{
+                            diary = dc["diaryUID"].toString()
+                        }
                         bingoListArray.add(
                             BingoListModel(
                                 dc["uid"] as String,
                                 dc["checked"] as Boolean,
                                 dc["bingoList"] as String,
+                                diaryUID = diary
                             )
                         )
                         Log.d("test", bingoListArray[0].bingoList)
                     }
                 }
+
                 bingoListAdapter.notifyDataSetChanged()
             }
 //

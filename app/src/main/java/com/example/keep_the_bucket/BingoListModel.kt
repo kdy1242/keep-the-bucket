@@ -5,4 +5,5 @@ class BingoListModel (
     var isChecked : Boolean = false,
     var bingoList: String = "",
     var timestamp: String? = null,
+    var diaryUID : String? = null
 )

@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class BingoListAdapter(private val bingoList: ArrayList<BingoListModel>) : RecyclerView.Adapter<BingoListAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<BingoListData>()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bingo_list,parent,false)

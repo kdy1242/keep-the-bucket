@@ -12,10 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.activity_diary.*
 import kotlinx.android.synthetic.main.dialog_bingo_list.*
-import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -52,6 +49,7 @@ class BingoListDialog(context: Context,) : Dialog(context) {
             bingoListModel.bingoList = bingo_list_text.text.toString()
             bingoListModel.isChecked = false
             bingoListModel.timestamp = timeDateFormat.format(nowTimeDate)
+            bingoListModel.diaryUID = ""
 
             fbFirestore?.collection("bingo_list")?.document()?.set(bingoListModel)
             Toast.makeText(context, "등록 완료", Toast.LENGTH_SHORT).show()
