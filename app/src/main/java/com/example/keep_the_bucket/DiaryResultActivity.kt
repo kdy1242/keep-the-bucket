@@ -27,7 +27,7 @@ class DiaryResultActivity : AppCompatActivity() {
 
                     if (it["imgUrl"] as String? != null){
                         Log.i("TAG", "onCreate: 사진 결과 "+it["imgUrl"])
-                        Glide.with(this)
+                        Glide.with(applicationContext)
                             .load(it["imgUrl"] as String)
                             .into(binding.diaryImg)
                     }

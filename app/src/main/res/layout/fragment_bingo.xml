@@ -34,8 +34,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -43,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -60,8 +60,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -69,7 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -86,8 +86,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -112,8 +112,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -138,8 +138,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -147,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -164,8 +164,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -173,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -190,8 +190,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img7"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -199,7 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -216,8 +216,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img8"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -225,7 +225,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -242,8 +242,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img9"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -251,7 +251,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -268,8 +268,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img10"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -277,7 +277,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -294,8 +294,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img11"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -303,7 +303,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -320,8 +320,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img12"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -329,7 +329,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -346,8 +346,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img13"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -355,7 +355,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -372,8 +372,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img14"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -381,7 +381,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -398,8 +398,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img15"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -407,7 +407,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />
@@ -424,8 +424,8 @@
 
                 <ImageView
                     android:id="@+id/bingo_img16"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="80.5dp"
+                    android:layout_height="80.5dp"
                     android:src="@drawable/ic_bingo_img" />
 
                 <TextView
@@ -433,7 +433,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxWidth="30dp"
+                    android:maxWidth="35dp"
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:text="" />

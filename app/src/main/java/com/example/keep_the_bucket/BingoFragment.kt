@@ -117,7 +117,7 @@ class BingoFragment : Fragment() {
 //                        Log.i("TAG", "onViewCreated: 삭제됨"+dc.document.data+" / "+dc.type)
 //                        fbFirestore.collection("bingo_list").document(dc.document.id).delete()
 //                        bingoListArray.clear()
-//                    }
+//                    } //삭제 가능 코드
                     for(dc in value) {
                         var diary = ""
                         Log.i("TAG", "onViewCreated: diaryUID "+dc["diaryUID"])
