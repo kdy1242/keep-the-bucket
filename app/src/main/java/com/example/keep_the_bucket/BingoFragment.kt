@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.keep_the_bucket.databinding.FragmentBingoBinding
@@ -106,9 +105,9 @@ class BingoFragment : Fragment() {
 
     val bClickLister : View.OnClickListener = View.OnClickListener{
         var bingoNum = 1
-        when(it.id){
+        when(it.id) {
             R.id.bingo1 -> {
-                bingoNum =1
+                bingoNum = 1
             }
             R.id.bingo2 -> {
                 bingoNum = 2
@@ -156,7 +155,6 @@ class BingoFragment : Fragment() {
                 bingoNum = 16
             }
         }
-
         val intent = Intent(this.context,DiaryActivity::class.java)
         intent.putExtra("bingoNum",bingoNum)
         startActivity(intent)
