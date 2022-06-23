@@ -24,10 +24,22 @@ class BingoListAdapter(private val bingoList: ArrayList<BingoListModel>) : Recyc
         val bingoList : BingoListModel = bingoList[position]
         holder.check.text = bingoList.bingoList
         holder.check.isChecked = bingoList.isChecked
-
+        holder.itemView.setOnClickListener{
+            itemClickListener.onClick(it,position)
+        }
     }
 
     public class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val check: CheckBox = itemView.findViewById(R.id.check)
+
+    }
+
+    interface ItemClickListener{
+        fun onClick(view: View,position: Int)
+    }
+
+    private lateinit var itemClickListener: ItemClickListener
+    fun setItemClickListener(itemClickListener: ItemClickListener) {
+        this.itemClickListener = itemClickListener
     }
 }
