@@ -1,6 +1,7 @@
 package com.example.keep_the_bucket
 
 import android.Manifest
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,9 @@ class DiaryActivity : AppCompatActivity() {
     var fbFirestore : FirebaseFirestore? = null
     var imageUri : String? = null
 
+    private var firestore : FirebaseFirestore? = null
+    private var uid : String? = null
+
     val binding by lazy { ActivityDiaryBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +38,22 @@ class DiaryActivity : AppCompatActivity() {
         auth = Firebase.auth
         fbFirestore = FirebaseFirestore.getInstance()
 
+//        uid = FirebaseAuth.getInstance().currentUser?.uid
+//        firestore = FirebaseFirestore.getInstance()
+
+
         val bingoNum = intent.getIntExtra("bingoNum",1)
+
+        val data = fbFirestore?.collection("diary")?.whereEqualTo("num", bingoNum)?.get()?.addOnSuccessListener { result ->
+            if(!result.isEmpty) {
+                val num = result.first().getLong("num")
+                Log.d("mytag", num.toString())
+                val intent = Intent(this,DiaryResultActivity::class.java)
+                intent.putExtra("bingoNum",num)
+                startActivity(intent)
+                finish()
+            }
+        }
 
         val nowTime = System.currentTimeMillis()
         val nowTimeDate = Date(nowTime)
@@ -89,6 +108,7 @@ class DiaryActivity : AppCompatActivity() {
         }.addOnSuccessListener {taskSnapshot ->
             Log.d("스토리지", "성공 주소=>${fullPath}") //5. 경로를 DB에 저장하고 사용
             imageUri = uri.toString()
+
             Glide.with(this)
                 .load(imageUri)
                 .into(diary_img)
