@@ -25,14 +25,12 @@ class HomeShareListAdapter(private val context: Context) : RecyclerView.Adapter<
 
         private val title: TextView = itemView.findViewById(R.id.listTitle)
         private val date: TextView = itemView.findViewById(R.id.listDate)
-        private val people: TextView = itemView.findViewById(R.id.listPeople)
-        private val time: TextView = itemView.findViewById(R.id.listTime)
+
 
         fun bind(item: HomeShareListData) {
             title.text = item.title
             date.text = item.date
-            people.text = item.people.toString()
-            time.text = item.time
+
         }
     }
 

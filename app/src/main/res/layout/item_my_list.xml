@@ -56,25 +56,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="12sp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="39dp"
-            android:layout_marginTop="-10dp"
-            android:gravity="center_vertical">
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/ic_select_tab_users"
-                android:tint="@color/text_gray" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:fontFamily="@font/notosanskr_regular"
-                android:text="1"
-                android:textColor="@color/text_gray"
-                android:textSize="12sp" />
-        </LinearLayout>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -84,13 +66,7 @@
         android:orientation="vertical"
         android:paddingTop="8dp"
         android:paddingBottom="15dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosanskr_regular"
-            android:text="30분 전 수정됨"
-            android:textColor="@color/text_gray"
-            android:textSize="10sp" />
+
         <View
             android:layout_width="wrap_content"
             android:layout_height="0dp"
