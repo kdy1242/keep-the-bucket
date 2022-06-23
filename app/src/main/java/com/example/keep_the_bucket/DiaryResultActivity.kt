@@ -1,5 +1,6 @@
 package com.example.keep_the_bucket
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -18,21 +19,13 @@ class DiaryResultActivity : AppCompatActivity() {
 
         val bingoNum = intent.getIntExtra("bingoNum",1)
 
+        binding.backBtn.setOnClickListener {
+            val intent = Intent(this,BingoFragment::class.java)
+            startActivity(intent)
+        }
+
     }
 
-
-    private fun updateList() {
-//        db.document(bingoNum).collection("diary")
-//            .get()
-//            .addOnSuccessListener { result ->
-//                for (document in result) {
-//                    Log.d(TAG, "${document.id} => ${document.data}")
-//                }
-//            }
-//            .addOnFailureListener { exception ->
-//                Log.d(TAG, "Error getting documents: ", exception)
-//            }
-    }
     private fun queryItem(bingoNum: String) {
 
         db.document(bingoNum.toString()).get()
@@ -40,7 +33,6 @@ class DiaryResultActivity : AppCompatActivity() {
                 Glide.with(this)
                     .load(it["imgUrl"] as String)
                     .into(binding.diaryImg)
-
                 binding.diaryDateTxt.setText(it["timestamp"].toString())
                 binding.diaryTitleTxt.setText(it["title"].toString())
                 binding.diaryContents.setText(it["diary_cont"].toString())
